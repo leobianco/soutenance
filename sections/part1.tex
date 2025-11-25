@@ -1,0 +1,389 @@
+\section{Part I: Contributions to Robust Community Detection}
+\subsection{Robust Estimation for the SBM}
+
+\begin{frame}[plain]
+    \centering
+    \vfill
+    \Huge Part I\\[0.75em]\textbf{Contributions to Robust Community Detection}
+    \vfill
+\end{frame}
+
+\setcounter{framenumber}{0}
+
+\begin{frame}{Motivation}
+    \begin{columns}
+        \begin{column}{0.5\linewidth}
+            \begin{itemize}
+                \item \textit{Community detection}: group similar nodes in a graph.
+                \item Algorithms can be \textbf{highly sensitive} to \textit{outlier} nodes.
+                \item[{\color{white}\ding{118}}] {\color{white}\textbf{Goal}: achieve ``good'' results despite outliers.}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\linewidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth]{figures/part1/jazz_graph.png}
+                \caption*{\scriptsize \color{gray} Graph of Jazz collaborations in New York, Chicago, and Other Cities~\citep{gleiser2003community}.}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Motivation}
+    \addtocounter{framenumber}{-1}
+    \begin{columns}
+        \begin{column}{0.5\linewidth}
+            \begin{itemize}
+                \item \textit{Community detection}: group similar nodes in a graph.
+                \item Algorithms can be \textbf{highly sensitive} to \textit{outlier} nodes.
+                \item[{\color{white}\ding{118}}] {\color{white}\textbf{Goal}: achieve ``good'' results despite outliers.}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\linewidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth]{figures/part1/jazz_sc_graph.png}
+                \caption*{\scriptsize \color{gray}Spectral clustering applied to the graph of Jazz collaborations~\citep{gleiser2003community}.}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Motivation}
+    \addtocounter{framenumber}{-1}
+    \begin{columns}
+        \begin{column}{0.5\linewidth}
+            \begin{itemize}
+                \item \textit{Community detection}: group similar nodes in a graph.
+                \item Algorithms can be \textbf{highly sensitive} to \textit{outlier} nodes.
+                \item {\color{green!60!black}\textbf{Goal}}: achieve ``good'' results despite outliers.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\linewidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth]{figures/part1/jazz_sc_graph.png}
+                \caption*{\scriptsize \color{gray}Spectral clustering applied to the graph of Jazz collaborations~\citep{gleiser2003community}.}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% --- METHODOLOGY ---
+\begin{frame}{Graphs}
+    \begin{columns}
+        \column{0.5\linewidth}
+            \textit{Graph:} nodes linked by edges.\\[1em]
+            \hspace{1em}\(G = (V, E)\) \\[1em]
+            \hspace{1em}\(V = \{1, \dotsc, n\}\), \(E \subset V \times V\)\\[1em]
+            \textit{Undirected graph:} \\[1em]
+            \hspace{1em}\((i, j) \in E \Rightarrow (j, i) \in E\)\\[1em]
+            \textit{Adjacency matrix:}\\[1em]
+            \hspace{1em}\(A_{i j} = 
+                \begin{cases}
+                    \, 1 \quad \text{if } (i, j) \in E \\
+                    \, 0 \quad \text{otherwise}
+                \end{cases}
+            \)
+        \column{0.5\linewidth}
+            \begin{figure}
+                \includegraphics[width=\linewidth]{figures/part1/polbooks.png}
+            \end{figure}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}{The Stochastic Block Model~\citep{HOLLAND1983109}}
+    \begin{columns}
+        \column{0.5\linewidth}
+            \textit{Probabilistic model}
+            \\[1em]
+            \hspace{1em} \(Z_i \to \text{community of node } i\) \\[1em]
+            \hspace{1em} \(K \; \to \text{nb. of communities}\) \\[1em]
+            \hspace{1em} \(\textcolor{myblue}{\pi_{k}} \to \text{size of community } k\) \\[1em]
+            \hspace{1em} \(\textcolor{myorange}{\Gamma_{kl}} \to \text{connectivity } k, l\) \\[1.5em]
+            {\color{white}
+            \((Z, A) \sim \textup{SBM}_K (\pi, \Gamma)\) 
+            \begin{equation*}
+                \begin{cases}
+                    \mathbb{P}(Z_i = k) = \pi_k \\
+                    \mathbb{P}(A_{i j} = 1 \vert Z_i = k, Z_j = l) = \Gamma_{kl}
+                \end{cases}
+            \end{equation*}
+            }
+        \column{0.5\linewidth}
+            \includegraphics[width=\linewidth]{figures/part1/sbm.png}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{The Stochastic Block Model~\citep{HOLLAND1983109}}
+    \addtocounter{framenumber}{-1}
+    \begin{columns}
+        \column{0.5\linewidth}
+            \textit{Probabilistic model}
+            \\[1em]
+            \hspace{1em} \(Z_i \to \text{community of node } i\) \\[1em]
+            \hspace{1em} \(K \; \to \text{nb. of communities}\) \\[1em]
+            \hspace{1em} \(\textcolor{myblue}{\pi_{k}} \to \text{size of community } k\) \\[1em]
+            \hspace{1em} \(\textcolor{myorange}{\Gamma_{kl}} \to \text{connectivity } k, l\) \\[1.5em]
+            \((Z, A) \sim \textup{SBM}_{K} (\textcolor{myblue}{\pi}, \textcolor{myorange}{\Gamma})\) 
+            \begin{equation*}
+                \begin{cases}
+                    \mathbb{P}(Z_i = k) = \textcolor{myblue}{\pi_k} \\
+                    \mathbb{P}(A_{i j} = 1 \vert Z_i = k, Z_j = l) = \textcolor{myorange}{\Gamma_{kl}}
+                \end{cases}
+            \end{equation*}
+        \column{0.5\linewidth}
+            \includegraphics[width=\linewidth]{figures/part1/sbm.png}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{The Corrupted Stochastic Block Model}
+    \begin{columns}
+        \column{0.5\linewidth}
+            {\color{myred}\textbf{Adversary}} introduces outliers:
+            \vspace{0.75em}
+            \begin{enumerate}
+                \item \((Z, A_{\textup{pure}}) \sim \textup{SBM}_{K}(\textcolor{myblue}{\pi}, \textcolor{myorange}{\Gamma})\)
+                \item Adversary \textit{arbitrarily} changes edges of \(\gamma n\) nodes
+                \item Corrupted \(A\) is observed
+            \end{enumerate}
+            % \begin{equation*}
+            %      \; \xrightarrow[\gamma n {\scriptsize \text{ nodes}}]{{\scriptsize \text{Corruption}}} \; A
+            % \end{equation*}
+            % \\[1em]
+            % \hspace{1em} \(Z_i \to \text{community of node } i\) \\[1em]
+            % \hspace{1em} \(K \; \to \text{nb. of communities}\) \\[1em]
+            % \hspace{1em} \(\textcolor{myblue}{\pi_{k}} \to \text{size of community } k\) \\[1em]
+            % \hspace{1em} \(\textcolor{myorange}{\Gamma_{kl}} \to \text{connectivity } k, l\) \\[1.5em]
+            % \((Z, A) \sim \textup{SBM}_{K} (\textcolor{myblue}{\pi}, \textcolor{myorange}{\Gamma})\) 
+            % \begin{equation*}
+            %     \begin{cases}
+            %         \mathbb{P}(Z_i = k) = \textcolor{myblue}{\pi_k} \\
+            %         \mathbb{P}(A_{i j} = 1 \vert Z_i = k, Z_j = l) = \textcolor{myorange}{\Gamma_{kl}}
+            %     \end{cases}
+            % \end{equation*}
+        \column{0.5\linewidth}
+            \includegraphics[width=\linewidth]{figures/part1/sbm_outliers.png}
+    \end{columns}
+\end{frame}
+% --- END OF METHODOLOGY ---
+
+% --- PROBLEM ---
+\begin{frame}{Research question}
+    \begin{itemize}
+        % \item {\color{myred}\textbf{Adversary}}: arbitrary changes on a fraction \(\gamma\) of nodes.
+        % \begin{equation*}
+        %     (Z, A^\prime) \sim \textup{SBM}_{K}(\textcolor{myblue}{\pi}, \textcolor{myorange}{\Gamma}) \quad \xrightarrow[\gamma n {\scriptsize \text{ nodes}}]{{\scriptsize \text{Corruption}}} \quad A
+        % \end{equation*}
+        \item \underline{Task}: robustly estimate the connectivities \(\textcolor{myorange}{\Gamma}\).
+        \item For \(K=1\), \citet{pmlr-v178-acharya22a}.
+    \end{itemize}
+    % \pause
+    \begin{tcolorbox}[colback=orange!60!white,
+                    colframe=orange!60!white]
+        \textbf{Research question:} \\[0.5em]
+        How to robustly estimate \(\Gamma\) for \(K > 1\)?
+    \end{tcolorbox}
+\end{frame}
+% --- END OF PROBLEM ---
+
+\begin{frame}{Results}
+    \begin{itemize}
+        \item \textit{Intuition:} find subgraph \(S\) excluding worst outliers.
+        \item \textbf{First contribution}: extended bound from~\citet{pmlr-v178-acharya22a} to \(K > 1\).
+    \end{itemize}
+    \pause
+    \begin{tcolorbox}[colback=yellow!45!white,
+                    colframe=yellow!45!white]
+        \textbf{Theorem.} Denote \(\mathcal{I}\) the set of inlier nodes, \(S\) a subgraph clustered into \(S_1, \dotsc, S_K\). Let
+        \(\hat{\Gamma} = \left(\sum_{i \in S_k j \in S_l} A_{i j}\right) / \vert S_k \vert \vert S_l \vert\) and \(\hat{Q}(S)_{i j} = \hat{\Gamma}_{S(i) S(j)}\).
+        Then,
+        \begin{align*}
+            \lVert \Gamma - \hat{\Gamma} \rVert_1 &\lesssim \frac{\lVert A_S - \hat{Q}(S) \rVert_{\textup{op}}}{\min_{1 \leq k \leq K} \lvert \Omega_k \cap S_k \cap \mathcal{I} \rvert}
+        \end{align*}
+    \end{tcolorbox}
+\end{frame}
+
+% \begin{frame}{Results}
+%     {\color{red}\textbf{Interpretation:}}
+% \end{frame}
+
+\begin{frame}{Results}
+    \addtocounter{framenumber}{-1}
+    \begin{itemize}
+        \item \textit{Intuition:} find subgraph \(S\) excluding worst outliers.
+        \item \textbf{First contribution}: extended bound from~\citet{pmlr-v178-acharya22a} to \(K > 1\).
+        \item \textbf{Second contribution} (\textsc{SubSearch}): finding \(S\) by optimizing \(c(S) \coloneqq \lVert A_S - \hat{Q}(S) \rVert_{\textup{op}}\) via Simulated Annealing.
+        \item \textbf{Code}: \url{github.com/leobianco/robust_estim_sbm}
+    \end{itemize}
+\end{frame}
+
+% \begin{frame}{Results}
+%     \begin{algorithm}[H]
+%         \caption{\textsc{SubSearch}}
+%         \begin{algorithmic}
+%             \Require Graph \(A\), subgraph size \((1-\gamma)n\)
+%             \State \(S_{\text{best}} \gets\) random connected subgraph of size \((1-\gamma)n\)
+%             \State Initialize temperature \(T_0\)
+%             \For{\(t = 1, \dotsc, t_{\text{max}}\)}
+%                 \For{each Markov chain iteration}
+%                     \State \(S_{\text{candidate}} \gets \texttt{neighbor}(S_{\text{current}})\)
+%                     \State \(\Delta \gets c(S_{\text{current}}) - c(S_{\text{candidate}})\)
+%                     \State Accept \(S_{\text{candidate}}\) with probability \(\min(1, e^{\Delta / T_t})\)
+%                     \State Update \(S_{\text{best}}\) if improved
+%                 \EndFor
+%                 \State \(T_{t+1} \gets c \cdot T_t\)
+%             \EndFor
+%             \State \Return \(S_{\text{best}}\)
+%         \end{algorithmic}
+%     \end{algorithm}
+% \end{frame}
+
+% \begin{frame}{\textsc{SubSearch}: Subgraph Search via Simulated Annealing}
+% We explore the space \(\mathcal{S}\) of all subgraphs \(S \subset G\) of size \((1-\gamma)n\), 
+% seeking a minimizer of the objective
+% \[
+% c(S) = \|A_S - \hat{Q}(S)\|_{\textup{op}}.
+% \]
+% \vspace{1em}
+% \begin{itemize}
+%     \item[\textbf{Step 1.}] Initialize the search at a high ``temperature'' \(T_0\).
+%     \pause
+%     \item[\textbf{Step 2.}] Propose a new subgraph by swapping one node 
+%     \(i \in S_{\text{current}}\) with a random node \(j \notin S_{\text{current}}\).
+%     \pause
+%     \item[\textbf{Step 3.}] Evaluate the change in cost 
+%     \(\Delta = c(S_{\text{current}}) - c(S_{\text{candidate}})\).
+%     Accept the candidate with probability
+%     \[
+%     \min\!\left(1,\; \exp\!\left(\Delta / T_t\right)\right).
+%     \]
+%     \pause
+%     \item[\textbf{Step 4.}] Gradually cool the system using 
+%     \(T_{t+1} = c\, T_t\), where the cooling rate \(c \approx 1\).
+% \end{itemize}
+% \end{frame}
+
+\begin{frame}{\textsc{SubSearch}: Subgraph Search via Simulated Annealing}
+
+\begin{columns}[T, totalwidth=\textwidth]
+% -------------------------------- LEFT COLUMN --------------------------------
+\begin{column}{0.55\textwidth}
+    \small
+
+{\color{green!60!black}\textbf{Goal}}: explore the space \(\mathcal{S}\) of subgraphs \(S \subset G\) of size \((1-\gamma)n\),
+to minimize \(c(S) = \|A_S - \hat{Q}(S)\|_{\textup{op}}.\)
+
+\vspace{0.5em}
+
+\begin{itemize}
+    \uncover<2->{%
+        \item[\color{blue!70}\large\ding{172}] \textbf{Initialize}
+        at a high temperature \(T_0\), random subgraph \(S_0\)
+    }
+
+    \uncover<3->{%
+        \item[\color{blue!70}\large\ding{173}] \textbf{Propose}
+        \(S_{\text{candidate}}\): swap 
+        \(i \in S_{\text{current}}\) with \(j \notin S_{\text{current}}\)
+    }
+
+    \uncover<4->{%
+        \item[\color{blue!70}\large\ding{174}] \textbf{Accept or reject:}
+        compute \(\Delta = c(S_{\text{current}}) - c(S_{\text{candidate}})\),\\
+        accept with probability \(\min\!\left(1, \exp(\Delta / T_t)\right)\)
+    }
+
+    \uncover<5->{%
+        \item[\color{blue!70}\large\ding{175}] \textbf{Cool down}
+        by \(T_{t+1} = c\,T_t\), \(c \approx 1\)
+    }
+    \uncover<6->{}
+\end{itemize}
+
+\end{column}
+
+% -------------------------------- RIGHT COLUMN --------------------------------
+\begin{column}{0.45\textwidth}
+\centering
+\vbox{\vspace{5em} % optional top padding to stabilize alignment
+\only<1>{\includegraphics[width=\linewidth,keepaspectratio]{figures/part1/sbm_outliers.png}}
+\only<2>{\includegraphics[width=\linewidth,keepaspectratio]{figures/part1/sbm_outliers_init.png}}
+\only<3>{\includegraphics[width=\linewidth,keepaspectratio]{figures/part1/sbm_outliers_candidate.png}}
+\only<4>{\includegraphics[width=\linewidth,keepaspectratio]{figures/part1/sbm_outliers_current.png}}
+\only<5>{\includegraphics[width=\linewidth,keepaspectratio]{figures/part1/sbm_outliers_current.png}}
+\only<6>{\includegraphics[width=\linewidth,keepaspectratio]{figures/part1/sbm_outliers_ideal.png}}
+}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Results}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{figures/part1/jazz_sc_graph.png}
+        % \caption{Using our method, outliers are removed and a partition correlated with NYC, Chicago, and ``Other Cities'' is found.}
+    \end{figure} 
+\end{frame}
+
+\begin{frame}{Results}
+    \addtocounter{framenumber}{-1}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{figures/part1/jazz_SA_graph.png}
+        % \caption{Using our method, outliers are removed and a partition correlated with NYC, Chicago, and ``Other Cities'' is found.}
+    \end{figure} 
+\end{frame}
+
+\begin{frame}{Results}
+    Parameters: \(n = 200\), \(K = 2\), \(\gamma = 0.3\).
+    \begin{figure}
+        \centering
+        \begin{subfigure}{\textwidth}
+            \centering
+            \includegraphics[height=0.4\textheight]{figures/part1/ideal_SA_horizontal.pdf}
+            \label{fig:simulated_annealing_single_run}
+        \end{subfigure}
+        \vspace{0.1em}
+        \begin{subfigure}{\textwidth}
+            \centering
+            \includegraphics[height=0.5\textheight]{figures/part1/simulated_annealing_true_outliers.png}
+            \label{fig:simulated_annealing_true_outliers}
+        \end{subfigure}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Results}
+    Parameters: \(n = 200\), \(K = 2\), \(\gamma = 0.3\).
+    \begin{figure}
+        \begin{subfigure}{\textwidth}
+            \centering
+            \includegraphics[height=0.4\textheight]{figures/part1/filtering_horizontal.pdf}
+            \label{fig:filtering_horizontal_1}
+        \end{subfigure}
+        \begin{subfigure}{\textwidth}
+            \centering
+            \includegraphics[height=0.5\textheight]{figures/part1/filtering_true_outliers.png}
+            \label{fig:filtering_graph}
+        \end{subfigure}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Results}%[allowframebreaks, noframenumbering]
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{figures/part1/multirun_gamma.pdf}
+        % \caption{Estimation error of different methods as the amount of perturbation increases.}
+        \label{fig:error_vs_gamma_best_results}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Discussion}
+    \begin{itemize}
+        \item \textbf{Main take away}: ``exploring'' the space of subgraphs \(\Rightarrow\) find subgraphs avoiding outliers.
+        \item \underline{Limitation \# 1}: can we rigorously prove robustness?
+        \item \underline{Limitation \# 2}: can we provide faster rates?
+    \end{itemize}
+    
+\end{frame}

@@ -1,0 +1,42 @@
+\documentclass[xcolor=dvipsnames]{beamer}
+
+\input{preamble.tex}
+
+\title{Outliers and Hallucinations:\\Contributions to Robust Community Detection and Language Model Alignment}
+\author[author1]{\textbf{Leonardo Martins Bianco}}
+\institute{\textit{Supervisors:}
+\\[1em]
+\textbf{Christine Keribin} (Laboratoire de Mathématiques d'Orsay) \\[1em] \textbf{Zacharie Naulet} (INRAE) \\[1em] \textbf{Jessica Hoffmann} (Google DeepMind)}
+\date{December 4, 2025}
+
+\begin{document}
+
+    \begin{frame}[plain, noframenumbering]
+        \maketitle
+    \end{frame}
+
+    \input{sections/intro.tex}
+
+    \begin{frame}[plain, noframenumbering]{Overview}
+        \tableofcontents
+    \end{frame}
+
+    \input{sections/part1.tex}
+    \input{sections/part2.tex}
+
+    {
+    \setbeamertemplate{footline}{}
+
+    \appendix
+
+    \begin{frame}[allowframebreaks, noframenumbering]
+            \frametitle{References}
+            \bibliographystyle{plainnat}
+            \nocite{*} 
+            {\scriptsize{} \bibliography{references.bib}}
+    \end{frame}
+
+    \input{sections/appendix.tex}
+    }
+ 
+\end{document}

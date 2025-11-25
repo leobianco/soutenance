@@ -1,0 +1,95 @@
+% \usepackage[dvipsnames]{xcolor}
+\usepackage[HTML]{xcolor} % Load xcolor with the HTML option
+
+% Define the custom color for easy reuse
+\definecolor{mypurple}{HTML}{631D76}
+\definecolor{mypink}{HTML}{9E4770}
+\definecolor{myorange}{HTML}{e8871e}
+\definecolor{mygreen}{HTML}{008972}
+\definecolor{myblue}{HTML}{3943b7}
+\definecolor{myred}{HTML}{d1495b}
+
+\usefonttheme{professionalfonts}
+\usepackage{soul}
+\setlength{\fboxsep}{1pt} % controls padding
+\newcommand{\mycolorbox}[2]{\fcolorbox{red!70!white}{red!70!white}{#2}}
+
+\usepackage{newpxtext,newpxmath}
+\usepackage{subcaption}  % grids of images
+\renewcommand\familydefault{\rmdefault}
+% \usepackage[ruled]{algorithm2e}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{flexisym}
+\usepackage{breqn}
+\usepackage{tcolorbox}
+\usepackage[utf8]{inputenc}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue,
+}
+\usepackage{wrapfig}
+\usepackage{appendixnumberbeamer}
+\let\realcite\cite
+\renewcommand*{\cite}[1]{{\scriptsize\realcite{#1}}}
+\usepackage{pifont}
+\usepackage{ragged2e}
+% 1. Load natbib
+\usepackage[authoryear]{natbib}
+% 2. The essential fix for natbib/beamer compatibility
+% \newcommand{\newblock}{\hskip .11em plus .33em minus .07em} 
+% Set up your bibliography style (must be a natbib-compatible style)
+
+% \usepackage{thmtools}  % theorem, definition, and question lists
+% \theoremstyle{plain}
+% \newtheorem{theorem}{Theorem}[section]
+% \newtheorem{proposition}[theorem]{Proposition}
+% \newtheorem{lemma}[theorem]{Lemma}  
+% \newtheorem*{corollary}{Corollary}
+% \theoremstyle{definition}
+% \newtheorem{definition}{Definition}[section]
+% \newtheorem{example}{Example}[section]
+% \newtheorem{question}{Question}
+% \theoremstyle{remark}
+% \newtheorem*{remark}{Remark}
+
+% --- page number ---
+\setbeamertemplate{footline}{%
+	\raisebox{10pt}{\makebox[\paperwidth]{\hfill\makebox[7em]{\normalsize\texttt{\insertframenumber/\inserttotalframenumber}}}}%
+}
+\setbeamertemplate{itemize item}{\ding{118}}
+%  --------------- SPACE BETWEEN ITEMS ---------------
+\let\OLDitemize\itemize
+\renewcommand\itemize{\OLDitemize\addtolength{\itemsep}{0.75em}}
+\let\OLDenumerate\enumerate
+\renewcommand\enumerate{\OLDenumerate\addtolength{\itemsep}{0.75em}}
+%  ------------------------------------------------
+
+\definecolor{lightcolor}{RGB}{255,245,225}
+\definecolor{darkblue}{RGB}{16,44,87}
+\setbeamercolor{frametitle}{fg=lightcolor,bg=darkblue}
+
+\setbeamerfont{date}{size=\footnotesize}
+
+\makeatletter
+\setbeamertemplate{subsection in toc}{%
+  \vspace{1em} % adjust this value to control spacing
+  \leavevmode\hskip2em%
+  {\usebeamercolor[fg]{structure}\ding{118}}\hskip0.6em%
+  \inserttocsubsection%
+  \vspace{1em} % same here
+}
+\setbeamertemplate{subsection in toc shaded}{%
+  \vspace{1em} % same here
+  \leavevmode\hskip2em%
+  {\usebeamercolor[fg]{structure}\ding{118}}\hskip0.6em%
+  \inserttocsubsection%
+  \vspace{1em} % same here
+}
+\makeatother
+
+\setbeamertemplate{navigation symbols}{}
