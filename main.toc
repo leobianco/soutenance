@@ -1,5 +1,5 @@
-\beamer@sectionintoc {1}{Part I: Contributions to Robust Community Detection}{8}{0}{1}
-\beamer@subsectionintoc {1}{1}{Robust Estimation for the SBM}{8}{0}{1}
-\beamer@sectionintoc {2}{Part II: Contributions to Language Model Alignment}{32}{0}{2}
-\beamer@subsectionintoc {2}{1}{Reducing Hallucinations with Synthetic Hallucinations}{40}{0}{2}
-\beamer@subsectionintoc {2}{2}{Decoding-time Realignment of Language Models}{47}{0}{2}
+\beamer@sectionintoc {1}{Part I: Contributions to Robust Community Detection}{6}{0}{1}
+\beamer@subsectionintoc {1}{1}{Robust Estimation for the SBM}{6}{0}{1}
+\beamer@sectionintoc {2}{Part II: Contributions to Language Model Alignment}{29}{0}{2}
+\beamer@subsectionintoc {2}{1}{Decoding-time Realignment of Language Models}{38}{0}{2}
+\beamer@subsectionintoc {2}{2}{Reducing Hallucinations with Synthetic Hallucinations}{47}{0}{2}

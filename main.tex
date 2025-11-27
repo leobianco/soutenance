@@ -6,8 +6,31 @@
 \author[author1]{\textbf{Leonardo Martins Bianco}}
 \institute{\textit{Supervisors:}
 \\[1em]
-\textbf{Christine Keribin} (Laboratoire de Mathématiques d'Orsay) \\[1em] \textbf{Zacharie Naulet} (INRAE) \\[1em] \textbf{Jessica Hoffmann} (Google DeepMind)}
+\textbf{Christine Keribin} (Université Paris-Saclay, LMO) \\[1em] \textbf{Zacharie Naulet} (Université Paris-Saclay, INRAE) \\[1em] \textbf{Jessica Hoffmann} (Google DeepMind)}
 \date{December 4, 2025}
+
+\titlegraphic{
+    \vfill
+    \centering
+    \begin{minipage}{\textwidth} % adjust width to control spacing
+        \centering
+        \includegraphics[height=1cm]{figures/intro/logo_upsaclay.png} \hspace{1em}
+        \includegraphics[height=0.8cm]{figures/intro/logo_deepmind.png}
+    \end{minipage}
+}
+
+% \titlegraphic{
+%     \vfill
+%     \noindent
+%     \begin{minipage}{0.5\textwidth}
+%         \includegraphics[height=1cm]{figures/intro/logo_upsaclay.png}  % left logo
+%     \end{minipage}%
+%     \hfill
+%     \begin{minipage}{0.5\textwidth}
+%         \raggedleft
+%         \includegraphics[height=0.8cm]{figures/intro/logo_deepmind.png}  % right logo
+%     \end{minipage}
+% }
 
 \begin{document}
 
@@ -16,13 +39,12 @@
     \end{frame}
 
     \input{sections/intro.tex}
-
-    \begin{frame}[plain, noframenumbering]{Overview}
-        \tableofcontents
-    \end{frame}
-
     \input{sections/part1.tex}
     \input{sections/part2.tex}
+
+    \begin{frame}{Conclusion}
+        \textbf{{\color{red}Write a conclusion slide}}
+    \end{frame}
 
     {
     \setbeamertemplate{footline}{}
@@ -31,7 +53,7 @@
 
     \begin{frame}[allowframebreaks, noframenumbering]
             \frametitle{References}
-            \bibliographystyle{plainnat}
+            \bibliographystyle{unsrtnat}
             \nocite{*} 
             {\scriptsize{} \bibliography{references.bib}}
     \end{frame}

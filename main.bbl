@@ -1,19 +1,14 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{12}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Acharya et~al.(2022)Acharya, Jain, Kamath, Suresh, and Zhang]{pmlr-v178-acharya22a}
-Jayadev Acharya, Ayush Jain, Gautam Kamath, Ananda~Theertha Suresh, and Huanyu Zhang.
-\newblock Robust estimation for random graphs.
-\newblock In Po-Ling Loh and Maxim Raginsky, editors, \emph{Proceedings of Thirty Fifth Conference on Learning Theory}, volume 178 of \emph{Proceedings of Machine Learning Research}, pages 130--166. PMLR, 02--05 Jul 2022.
-\newblock URL \url{https://proceedings.mlr.press/v178/acharya22a.html}.
-
-\bibitem[Diakonikolas et~al.(2019)Diakonikolas, Kamath, Kane, Li, Moitra, and Stewart]{diakonikolas2019robust}
-Ilias Diakonikolas, Gautam Kamath, Daniel Kane, Jerry Li, Ankur Moitra, and Alistair Stewart.
-\newblock Robust estimators in high dimensions without the computational intractability, 2019.
+\bibitem[Abbe(2023)]{abbe2023communitydetectionstochasticblock}
+Emmanuel Abbe.
+\newblock Community detection and stochastic block models, 2023.
+\newblock URL \url{https://arxiv.org/abs/1703.10146}.
 
 \bibitem[Gleiser and Danon(2003)]{gleiser2003community}
 Pablo~M Gleiser and Leon Danon.
@@ -28,9 +23,49 @@ Paul~W. Holland, Kathryn~Blackmond Laskey, and Samuel Leinhardt.
 \newblock \doi{https://doi.org/10.1016/0378-8733(83)90021-7}.
 \newblock URL \url{https://www.sciencedirect.com/science/article/pii/0378873383900217}.
 
+\bibitem[Liu and Moitra(2022)]{liu2022minimax}
+Allen Liu and Ankur Moitra.
+\newblock Minimax rates for robust community detection.
+\newblock In \emph{2022 IEEE 63rd Annual Symposium on Foundations of Computer Science (FOCS)}, pages 823--831. IEEE, 2022.
+
+\bibitem[Acharya et~al.(2022)Acharya, Jain, Kamath, Suresh, and Zhang]{pmlr-v178-acharya22a}
+Jayadev Acharya, Ayush Jain, Gautam Kamath, Ananda~Theertha Suresh, and Huanyu Zhang.
+\newblock Robust estimation for random graphs.
+\newblock In Po-Ling Loh and Maxim Raginsky, editors, \emph{Proceedings of Thirty Fifth Conference on Learning Theory}, volume 178 of \emph{Proceedings of Machine Learning Research}, pages 130--166. PMLR, 02--05 Jul 2022.
+\newblock URL \url{https://proceedings.mlr.press/v178/acharya22a.html}.
+
+\bibitem[Bianco et~al.(2025)Bianco, Keribin, and Naulet]{bianco2025subsearchrobustestimationoutlier}
+Leonardo~Martins Bianco, Christine Keribin, and Zacharie Naulet.
+\newblock Subsearch: Robust estimation and outlier detection for stochastic block models via subgraph search, 2025.
+\newblock URL \url{https://arxiv.org/abs/2506.03657}.
+
 \bibitem[Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, and Polosukhin]{Vaswani2017attention}
 Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan~N Gomez, {\L}ukasz Kaiser, and Illia Polosukhin.
 \newblock Attention is all you need.
 \newblock In \emph{Proceedings of the Conference on Neural Information Processing Systems}, volume~30, 2017.
+
+\bibitem[Chang et~al.(2024)Chang, Tomanek, Hoffmann, Thain, van Liemt, Meier-Hellstern, and Dixon]{chang2024detectinghallucinationcoverageerrors}
+Tyler~A. Chang, Katrin Tomanek, Jessica Hoffmann, Nithum Thain, Erin van Liemt, Kathleen Meier-Hellstern, and Lucas Dixon.
+\newblock Detecting hallucination and coverage errors in retrieval augmented generation for controversial topics, 2024.
+\newblock URL \url{https://arxiv.org/abs/2403.08904}.
+
+\bibitem[Christiano et~al.(2023)Christiano, Leike, Brown, Martic, Legg, and Amodei]{christiano2023deepreinforcementlearninghuman}
+Paul Christiano, Jan Leike, Tom~B. Brown, Miljan Martic, Shane Legg, and Dario Amodei.
+\newblock Deep reinforcement learning from human preferences, 2023.
+\newblock URL \url{https://arxiv.org/abs/1706.03741}.
+
+\bibitem[Ziegler et~al.(2020)Ziegler, Stiennon, Wu, Brown, Radford, Amodei, Christiano, and Irving]{ziegler2020finetuninglanguagemodelshuman}
+Daniel~M. Ziegler, Nisan Stiennon, Jeffrey Wu, Tom~B. Brown, Alec Radford, Dario Amodei, Paul Christiano, and Geoffrey Irving.
+\newblock Fine-tuning language models from human preferences, 2020.
+\newblock URL \url{https://arxiv.org/abs/1909.08593}.
+
+\bibitem[Liu et~al.(2024)Liu, Guo, Bianco, Calandriello, Berthet, Llinares, Hoffmann, Dixon, Valko, and Blondel]{liu2024decodingtimerealignmentlanguagemodels}
+Tianlin Liu, Shangmin Guo, Leonardo Bianco, Daniele Calandriello, Quentin Berthet, Felipe Llinares, Jessica Hoffmann, Lucas Dixon, Michal Valko, and Mathieu Blondel.
+\newblock Decoding-time realignment of language models, 2024.
+\newblock URL \url{https://arxiv.org/abs/2402.02992}.
+
+\bibitem[Diakonikolas et~al.(2019)Diakonikolas, Kamath, Kane, Li, Moitra, and Stewart]{diakonikolas2019robust}
+Ilias Diakonikolas, Gautam Kamath, Daniel Kane, Jerry Li, Ankur Moitra, and Alistair Stewart.
+\newblock Robust estimators in high dimensions without the computational intractability, 2019.
 
 \end{thebibliography}

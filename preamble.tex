@@ -8,6 +8,10 @@
 \definecolor{mygreen}{HTML}{008972}
 \definecolor{myblue}{HTML}{3943b7}
 \definecolor{myred}{HTML}{d1495b}
+\definecolor{lightcolor}{RGB}{255,245,225}
+% \definecolor{darkblue}{RGB}{16,44,87}
+\definecolor{darkblue}{RGB}{31,86,115}
+\definecolor{lightblue}{RGB}{56,114,152}
 
 \usefonttheme{professionalfonts}
 \usepackage{soul}
@@ -22,15 +26,16 @@
 \usepackage{algpseudocode}
 \usepackage{amsmath, amssymb}
 \usepackage{booktabs}
+\usepackage{arydshln}
 \usepackage{flexisym}
 \usepackage{breqn}
 \usepackage{tcolorbox}
 \usepackage[utf8]{inputenc}
 \hypersetup{
-    colorlinks,
-    citecolor=blue,
-    linkcolor=blue,
-    urlcolor=blue,
+    colorlinks=false,
+    % citecolor=blue,
+    % linkcolor=blue,
+    % urlcolor=myblue,
 }
 \usepackage{wrapfig}
 \usepackage{appendixnumberbeamer}
@@ -39,7 +44,12 @@
 \usepackage{pifont}
 \usepackage{ragged2e}
 % 1. Load natbib
-\usepackage[authoryear]{natbib}
+\usepackage[square, numbers]{natbib}
+% Redefine to use smaller font
+% \let\oldcitet\citet
+% \let\oldcitep\citep
+% \renewcommand{\citet}[1]{{\scriptsize\oldcitet{#1}}}
+% \renewcommand{\citep}[1]{{\scriptsize\oldcitep{#1}}}
 % 2. The essential fix for natbib/beamer compatibility
 % \newcommand{\newblock}{\hskip .11em plus .33em minus .07em} 
 % Set up your bibliography style (must be a natbib-compatible style)
@@ -59,9 +69,11 @@
 
 % --- page number ---
 \setbeamertemplate{footline}{%
-	\raisebox{10pt}{\makebox[\paperwidth]{\hfill\makebox[7em]{\normalsize\texttt{\insertframenumber/\inserttotalframenumber}}}}%
+	\raisebox{10pt}{\makebox[\paperwidth]{\hfill\makebox[7em]{\scriptsize \insertframenumber/\inserttotalframenumber}}}%
 }
-\setbeamertemplate{itemize item}{\ding{118}}
+\setbeamertemplate{itemize item}{{\color{lightblue}\ding{118}}}
+\setbeamercolor{enumerate item}{fg=lightblue} 
+
 %  --------------- SPACE BETWEEN ITEMS ---------------
 \let\OLDitemize\itemize
 \renewcommand\itemize{\OLDitemize\addtolength{\itemsep}{0.75em}}
@@ -69,27 +81,30 @@
 \renewcommand\enumerate{\OLDenumerate\addtolength{\itemsep}{0.75em}}
 %  ------------------------------------------------
 
-\definecolor{lightcolor}{RGB}{255,245,225}
-\definecolor{darkblue}{RGB}{16,44,87}
-\setbeamercolor{frametitle}{fg=lightcolor,bg=darkblue}
+\setbeamercolor{frametitle}{fg=lightcolor,bg=lightblue}
 
 \setbeamerfont{date}{size=\footnotesize}
 
-\makeatletter
-\setbeamertemplate{subsection in toc}{%
-  \vspace{1em} % adjust this value to control spacing
-  \leavevmode\hskip2em%
-  {\usebeamercolor[fg]{structure}\ding{118}}\hskip0.6em%
-  \inserttocsubsection%
-  \vspace{1em} % same here
-}
-\setbeamertemplate{subsection in toc shaded}{%
-  \vspace{1em} % same here
-  \leavevmode\hskip2em%
-  {\usebeamercolor[fg]{structure}\ding{118}}\hskip0.6em%
-  \inserttocsubsection%
-  \vspace{1em} % same here
-}
-\makeatother
+\setbeamertemplate{section in toc}{{\color{lightblue}\inserttocsection}}
+% \setbeamertemplate{title}{{\color{red}\inserttitle}}
+\setbeamercolor{title}{fg=lightblue}
+
+% \makeatletter
+% \setbeamertemplate{subsection in toc}{%
+%   \vspace{1em} % adjust this value to control spacing
+%   \leavevmode\hskip2em%
+%   {\usebeamercolor[fg]{structure}\ding{118}}\hskip0.6em%
+%   \inserttocsubsection%
+%   \vspace{1em} % same here
+% }
+% \setbeamertemplate{subsection in toc shaded}{%
+%   \vspace{1em} % same here
+%   \leavevmode\hskip2em%
+%   {\usebeamercolor[fg]{structure}\ding{118}}\hskip0.6em%
+%   \inserttocsubsection%
+%   \vspace{1em} % same here
+% }
+% \makeatother
+
 
 \setbeamertemplate{navigation symbols}{}
