@@ -33,13 +33,6 @@
     \end{columns}
 \end{frame}
 
-\begin{frame}{Retrieval Augmented Generation: NPOV Task~\citep{chang2024detectinghallucinationcoverageerrors}}
-    \begin{figure}
-        \centering
-        \includegraphics[scale=0.6]{figures/part2/npov_diagram.pdf}
-    \end{figure}
-\end{frame}
-
 \begin{frame}{Background on Language Models}
     \begin{itemize}
         \item \textit{Vocabulary} \(\mathcal{V}\) = set of \textit{tokens} (``pieces of words'')
@@ -75,164 +68,209 @@
     \end{itemize}
 \end{frame}
 
+% \begin{frame}{Background on Language Models}
+
+% \begin{minipage}[t][10em][t]{\textwidth}
+%     \only<1>{
+%         \textit{Pre-training}: given a dataset 
+%         \(\mathcal{D}_{\textup{pre}}\), find \(\theta\) minimizing
+%         \begin{equation*}
+%             \ell(\theta;\mathcal{D}_{\textup{pre}})
+%             \coloneqq
+%             - \sum_{x \in \mathcal{D}_{\textup{pre}}}
+%               \sum_{i=1}^{\lvert x \rvert}
+%               \log \pi_\theta(x_{i+1} \mid x_{\le i})
+%         \end{equation*}
+%     }
+%     \only<2>{
+%         \textit{SFT}: given a task-specific dataset 
+%         \(\mathcal{D}_{\textup{SFT}}\), find \(\theta\) minimizing
+%         \begin{equation*}
+%             \ell(\theta;\mathcal{D}_{\textup{SFT}})
+%             \coloneqq
+%             - \sum_{x \in \mathcal{D}_{\textup{SFT}}}
+%               \sum_{i=1}^{\lvert x \rvert}
+%               \log \pi_\theta(x_{i+1} \mid x_{\le i})
+%         \end{equation*}
+%     }
+%     \only<3>{
+%         \frametitle{Retrieval Augmented Generation: NPOV Task~\citep{chang2024detectinghallucinationcoverageerrors}}
+%     }
+%     \only<4-5>{
+%         \textcolor{myorange}{\textit{Alignment}} to human preferences via RL~\citep{christiano2023deepreinforcementlearninghuman}:\\[-0.25em]
+%         \begin{enumerate}
+%             \item<4-5> Train a \textit{reward} model \(\textcolor{myorange}{R}\)
+%                   on human preference data \(\mathcal{D}_{\textup{RM}}\)
+%             \item<5> Update the \textit{writer} model \(\pi_{\textup{SFT}}\)
+%         \end{enumerate}
+
+%         \only<5>{
+%         \begin{equation*}
+%             \pi_{\color{lightblue}\beta}
+%             \in \arg\max_{\pi}\,
+%             \mathbb{E}_{\substack{x \sim \mathcal{D}_{\textup{RL}} \\ y \sim p(y\mid x)}}\!\left[\textcolor{myorange}{R(x, y)}\right]
+%             - \textcolor{lightblue}{\beta}\;
+%               \textup{KL}\!\left(\pi \Vert \pi_{\textup{SFT}}\right)
+%         \end{equation*}
+%         }
+%     }
+%     \only<6>{
+%         \textit{Parameter-efficient tuning} \(\Rightarrow\) LoRA~\citep{hu2021loralowrankadaptationlarge}:\\[1em]
+%         \begin{equation*}
+%             \theta = \theta_{\textup{SFT}} + \underbrace{A B}_{\text{low rank } r}
+%         \end{equation*}
+%     }
+%     \only<7>{
+%         Evaluation via \textit{autorater}: large model capable of classification\\[1em]
+%         \begin{figure}
+%             \centering
+%             \includegraphics[width=0.8\textwidth]{figures/part2/autorater_prompt.PNG}
+%         \end{figure}
+%     }
+
+
+
+% \end{minipage}
+
+% % \vspace{2em}
+
+% \begin{center}
+%     \only<1>{
+%         \includegraphics[width=0.7\textwidth, page=1]{figures/part2/alignment_diagram.pdf}
+%     }
+%     \only<2>{
+%         \includegraphics[width=0.7\textwidth, page=2]{figures/part2/alignment_diagram.pdf}
+%     }
+%     \only<3>{
+%         \includegraphics[height=0.7\textheight]{figures/part2/npov_diagram.pdf}
+%     }
+%     \only<4>{
+%         \includegraphics[width=0.7\textwidth, page=3]{figures/part2/alignment_diagram.pdf}
+%     }
+%     \only<5>{
+%         \includegraphics[width=0.7\textwidth, page=4]{figures/part2/alignment_diagram.pdf}
+%     }
+%     \only<6>{
+%         \includegraphics[width=0.7\textwidth, page=5]{figures/part2/alignment_diagram.pdf}
+%     }
+%     \only<7>{
+%         \includegraphics[width=0.7\textwidth, page=6]{figures/part2/alignment_diagram.pdf}
+%     }
+% \end{center}
+% \end{frame}
+
 \begin{frame}{Background on Language Models}
 
-\begin{minipage}[t][9em][t]{\textwidth}
+% ------------------------
+% Top block: shown on all slides EXCEPT slide 3
+% ------------------------
+\only<1-2,4-7>{
+\begin{minipage}[t][10em][t]{\textwidth}
+
     \only<1>{
-        \textcolor{magenta!80!black}{Pre-training}: given a dataset 
-        \(\mathcal{D}_{{\color{magenta!80!black}\textup{pre}}}\), find \(\theta\) minimizing
+        \vspace{1em}
+        \textit{Pre-training}: given a dataset 
+        \(\mathcal{D}_{\textup{pre}}\), find \(\theta\) minimizing
         \begin{equation*}
-            \ell(\theta;\mathcal{D}_{{\color{magenta!80!black}\textup{pre}}})
-            \coloneqq
-            - \sum_{x \in \mathcal{D}_{{\color{magenta!80!black}\textup{pre}}}}
+            \ell(\theta;\mathcal{D}_{\textup{pre}})
+            = - \sum_{x \in \mathcal{D}_{\textup{pre}}}
               \sum_{i=1}^{\lvert x \rvert}
               \log \pi_\theta(x_{i+1} \mid x_{\le i})
         \end{equation*}
     }
+
     \only<2>{
-        \textcolor{mygreen}{SFT}: given a \textcolor{mygreen}{task-specific} dataset 
-        \(\mathcal{D}_{{\color{mygreen}\textup{SFT}}}\), find \(\theta\) minimizing
+        \vspace{1em}
+        \textit{SFT}: given a dataset \(\mathcal{D}_{\textup{SFT}}\), find \(\theta\) minimizing
         \begin{equation*}
-            \ell(\theta;\mathcal{D}_{{\color{mygreen}\textup{SFT}}})
-            \coloneqq
-            - \sum_{x \in \mathcal{D}_{{\color{mygreen}\textup{SFT}}}}
+            \ell(\theta;\mathcal{D}_{\textup{SFT}})
+            = - \sum_{x \in \mathcal{D}_{\textup{SFT}}}
               \sum_{i=1}^{\lvert x \rvert}
               \log \pi_\theta(x_{i+1} \mid x_{\le i})
         \end{equation*}
     }
-    \only<3->{
-        \textcolor{myorange}{Alignment} to human preferences via RL~\citep{christiano2023deepreinforcementlearninghuman}:\\[-0.25em]
+
+    \only<4-5>{
+        \textcolor{myorange}{\textit{Alignment}} via RL~\citep{christiano2023deepreinforcementlearninghuman}:\\[-0.25em]
         \begin{enumerate}
-            \item<3-> Train a \textit{reward} model \(\textcolor{myorange}{R}\)
-                  on human preference data \(\mathcal{D}_{\textup{RM}}\)
-            \item<4-> Update the \textit{writer} model \(\pi_{\textup{SFT}}\)
+            \item<4-5> Train a reward model \(\!R\) on \(\mathcal{D}_{\textup{RM}}\)
+            \item<5> Update the writer model \(\pi_{\textup{SFT}}\)
         \end{enumerate}
 
-        \only<4>{
+        \only<5>{
         \begin{equation*}
-            \pi_{\color{lightblue}\beta}
+            \pi_{\beta}
             \in \arg\max_{\pi}\,
-            \mathbb{E}_{g \sim \pi}\!\left[\textcolor{myorange}{R(g)}\right]
-            - \textcolor{lightblue}{\beta}\;
-              \textup{KL}\!\left(\pi \Vert \pi_{\textup{SFT}}\right)
+            \mathbb{E}_{\substack{x \sim \mathcal{D}_{\textup{RL}} \\ y \sim p(y\mid x)}}\!\left[R(x, y)\right]
+            - \beta\,\mathrm{KL}\!\left(\pi \,\Vert\, \pi_{\textup{SFT}}\right)
         \end{equation*}
         }
     }
 
+    \only<6>{
+        \vspace{1em}
+        \textit{Parameter-efficient tuning} \(\Rightarrow\) Low-Rank Adaptation (LoRA)~\citep{hu2021loralowrankadaptationlarge}:
+        \begin{equation*}
+            \theta = \theta_{\textup{SFT}} + A B
+        \end{equation*}
+    }
+
+    \only<7>{
+    \vspace{1em}
+    Evaluation via \textit{autorater}:\\[0.75em]
+    \begin{center}
+        \includegraphics[width=0.8\textwidth]{figures/part2/autorater_prompt.PNG}
+    \end{center}
+}
+
 \end{minipage}
+} % end only<1-2,4-7>
 
-% \vspace{2em}
+% ------------------------
+% Slide 3 content: Title + full-page image
+% ------------------------
+\only<3>{
+    \frametitle{Retrieval Augmented Generation: 
+    NPOV Task~\citep{chang2024detectinghallucinationcoverageerrors}}
 
+    \begin{center}
+        \includegraphics[height=0.9\textheight]
+            {figures/part2/npov_diagram.pdf}
+    \end{center}
+}
+
+% ------------------------
+% Bottom images for all slides except 3
+% ------------------------
+\only<1-2,4-7>{
 \begin{center}
     \only<1>{
-        \includegraphics[width=0.7\textwidth, page=1]{figures/part2/alignment_diagram.pdf}
+        \includegraphics[width=0.7\textwidth,page=1]{figures/part2/alignment_diagram.pdf}
     }
     \only<2>{
-        \includegraphics[width=0.7\textwidth, page=2]{figures/part2/alignment_diagram.pdf}
-    }
-    \only<3>{
-        \includegraphics[width=0.7\textwidth, page=3]{figures/part2/alignment_diagram.pdf}
+        \includegraphics[width=0.7\textwidth,page=2]{figures/part2/alignment_diagram.pdf}
     }
     \only<4>{
-        \includegraphics[width=0.7\textwidth, page=4]{figures/part2/alignment_diagram.pdf}
+        \includegraphics[width=0.7\textwidth,page=3]{figures/part2/alignment_diagram.pdf}
+    }
+    \only<5>{
+        \includegraphics[width=0.7\textwidth,page=4]{figures/part2/alignment_diagram.pdf}
+    }
+    \only<6>{
+        \includegraphics[width=0.7\textwidth,page=5]{figures/part2/alignment_diagram.pdf}
+    }
+    \only<7>{
+        \includegraphics[width=0.7\textwidth,page=6]{figures/part2/alignment_diagram.pdf}
     }
 \end{center}
+}
+
 \end{frame}
 
-\subsection{Decoding-time Realignment of Language Models}
 
-\begin{frame}{Research questions}
-    \textbf{Problem}: coefficient \(\textcolor{lightblue}{\beta}\) is expensive to tune via grid-search
-    \\[1em]
-    \begin{tcolorbox}[colback=orange!60!white,
-                    colframe=orange!60!white]
-        \textbf{Research question \#1:} \\[0.5em]
-        Can we adjust regularization strength without retraining?
-    \end{tcolorbox}
-\end{frame}
 
-\begin{frame}{Closed-form solution}
-    \begin{itemize}
-        \item Closed-form solution to alignment objective~\citep{ziegler2020finetuninglanguagemodelshuman}:
-        \begin{equation*}
-            \pi_\beta (y \vert x) = \frac{\pi_{\textup{SFT}}(y \vert x) \, \exp \left(\frac{1}{\beta} R(x, y) \right)}{\sum_{y^\prime} \pi_{\textup{SFT}}(y^\prime \vert x) \, \exp \left(\frac{1}{\beta} R(x, y^\prime) \right)}
-        \end{equation*}
-        \pause
-        \item For \(\beta^\prime = \beta / \lambda\), after some algebra:
-        \begin{equation*}
-            \pi_{\beta / \lambda} (y \vert x) = \frac{\pi_{\textup{SFT}} (y \vert x) \left( \frac{\pi_\beta (y \vert x)}{\pi_{\textup{SFT}}(y \vert x)} \right)^\lambda}{\sum_{y^\prime} \pi_{\textup{SFT}} (y^\prime \vert x) \left( \frac{\pi_\beta (y^\prime \vert x)}{\pi_{\textup{SFT}}(y \vert x)} \right)^\lambda}
-        \end{equation*}
-        \pause
-        \item Idea: change \(y, y^\prime \to\) current trajectory \(\{y_i\}_{i=1, \dotsc, t}\), fit \(\pi_\beta\)
-    \end{itemize}
-\end{frame}
 
-\begin{frame}{Results}
-    \begin{itemize}
-        \item \textbf{Contribution}~\citep{liu2024decodingtimerealignmentlanguagemodels}: approximate realigned model at \(\beta / \lambda\)
-    \end{itemize}
-        \begin{tcolorbox}[colback=yellow!45!white, colframe=yellow!45!white, top=-2pt]
-        \begin{equation*}
-            \hat{\pi}_{\beta/\lambda} (y_t \vert x, y_{<t}) \coloneqq 
-            \frac{\pi_{\textup{SFT}} (y_t \vert x, y_{<t}) \left( \frac{\pi_\beta (y_t \vert x, y_{<t})}{\pi_{\textup{SFT}}(y_t \vert x, y_{<t})} \right)^\lambda}{\sum_{y_t} \pi_{\textup{SFT}} (y_t \vert x, y_{<t}) \left( \frac{\pi_\beta (y_t \vert x, y_{<t})}{\pi_{\textup{SFT}}(y_t \vert x, y_{<t})} \right)^\lambda}
-        \end{equation*}
-    \end{tcolorbox}
-    \begin{itemize}
-        \item[] {\color{white}where \(h^{(t)}_{\textup{SFT}}\) and \(h^{(t)}_{\beta}\) are the logits
-        \begin{align*}
-            \begin{cases}
-                \pi_{\textup{SFT}} (\, \cdot \, \vert x, y_{< t}) &= \textup{softmax} (h^{(t)}_{\textup{SFT}}) \\[0.75em]
-                \pi_{\beta} (\, \cdot \, \vert x, y_{< t}) &= \textup{softmax} (h^{(t)}_{\beta})
-            \end{cases}
-        \end{align*}}
-    \end{itemize}
-    % \begin{itemize}
-    %     \item[{\color{white}\ding{118}}] {\color{white}\textbf{Code}: \url{https://github.com/liutianlin0121/decoding-time-realignment}}
-    % \end{itemize}
-\end{frame}
-
-\begin{frame}{Results}
-    \begin{itemize}
-        \item \textbf{Contribution}~\citep{liu2024decodingtimerealignmentlanguagemodels}: approximate realigned model at \(\beta / \lambda\)
-    \end{itemize}
-    \begin{tcolorbox}[colback=yellow!45!white, colframe=yellow!45!white]
-        \begin{equation*}
-            \hat{\pi}_{\beta/\lambda} (\, \cdot \, \vert x, y_{<t}) = \textup{softmax} \left[ \lambda h_\beta^{(t)} + (1 - \lambda) h_{\textup{SFT}}^{(t)} \right]
-        \end{equation*}
-    \end{tcolorbox}
-    \begin{itemize}
-        \item[] where \(h^{(t)}_{\textup{SFT}}\) and \(h^{(t)}_{\beta}\) are the logits 
-        \begin{align*}
-            \begin{cases}
-                \pi_{\textup{SFT}} (\, \cdot \, \vert x, y_{< t}) &= \textup{softmax} (h^{(t)}_{\textup{SFT}}) \\[0.75em]
-                \pi_{\beta} (\, \cdot \, \vert x, y_{< t}) &= \textup{softmax} (h^{(t)}_{\beta})
-            \end{cases}
-        \end{align*}
-    \end{itemize}
-    \begin{itemize}
-        \item \textbf{Code}: {\color{lightblue}\url{https://github.com/liutianlin0121/decoding-time-realignment}}
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Results}
-    \begin{figure}
-        \centering
-        \includegraphics[scale=0.55]{figures/part2/dera-hallucination-single-col.pdf}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{Results}
-    \begin{figure}
-        \centering
-        \includegraphics[scale=0.5]{figures/part2/length_reward_result_no_sax.pdf}
-    \end{figure}
-\end{frame}
-
-% \begin{frame}{Discussion}
-%     \begin{itemize}
-%         \item ?
-%     \end{itemize}
-% \end{frame}
+\subsection{Reducing Hallucinations with Synthetic Hallucinations}
 
 \begin{frame}{Research questions}
     \textbf{Problem}: \(\mathcal{D}_{\textup{RM}}\) is costly, time-consuming, and error-prone to get
@@ -241,14 +279,12 @@
     \\[1em]
     \begin{tcolorbox}[colback=orange!60!white,
                     colframe=orange!60!white]
-        \textbf{Research question \#2:} \\[0.5em]
+        \textbf{Research question \#1:} \\[0.5em]
         Can synthetic hallucinations be used instead?
     \end{tcolorbox}
 \end{frame}
 
-\subsection{Reducing Hallucinations with Synthetic Hallucinations}
-
-\begin{frame}{Creating Synthetic Hallucinations}
+\begin{frame}{Creating Synthetic Hallucinations~\citep{chang2024detectinghallucinationcoverageerrors}}
 \textcolor{mygreen}{Pros:}
 \begin{enumerate}
     \item[{\color{mygreen}1.}] \textcolor{mygreen}{Studies show marijuana is a safe drug}
@@ -261,11 +297,11 @@ Cons:}
     \item[{\color{lightblue}2.}] \textcolor{lightblue}{Legalization brings costs}
 \end{enumerate}
 \vspace{0.75em}
-\textit{Neutral answer:}\\[0.75em]   
+Neutral answer:\\[0.75em]   
 ``Some people support marijuana legalization because {\color{mygreen}it would boost the economy} and {\color{mygreen}most studies demonstrate it is a safe drug}. Others oppose it because they see {\color{lightblue}marijuana as a gateway drug}, and its {\color{lightblue}legalization would bring many costs}.''
 \end{frame}
 
-\begin{frame}{Creating Synthetic Hallucinations}
+\begin{frame}{Creating Synthetic Hallucinations~\citep{chang2024detectinghallucinationcoverageerrors}}
 \textcolor{mygreen}{Pros:}
 \begin{enumerate}
     \item[{\color{mygreen}1.}] \textcolor{mygreen}{Studies show marijuana is a safe drug}
@@ -278,11 +314,11 @@ Cons:}
     \item[{\color{lightblue}2.}] \textcolor{lightblue}{Legalization brings costs}
 \end{enumerate}
 \vspace{0.75em}
-\textit{Neutral answer:}\\[0.75em]   
+Neutral answer:\\[0.75em]   
 ``Some people support marijuana legalization because {\color{mygreen}it would boost the economy} and {\color{mygreen}most studies demonstrate it is a safe drug}. Others oppose it because they see \mycolorbox{red!70!white}{marijuana as a} \mycolorbox{red!70!white}{gateway drug}, and its {\color{lightblue}legalization would bring many costs}.''
 \end{frame}
 
-\begin{frame}{Creating Synthetic Hallucinations}
+\begin{frame}{Creating Synthetic Hallucinations~\citep{chang2024detectinghallucinationcoverageerrors}}
 \begin{table}[h]
     \centering
     \begin{tabular}{lcccc}
@@ -297,12 +333,6 @@ Cons:}
     % \caption{Description of NPOV dataset. Summary rows (Topics and Samples) are separated by a dashed line.}
     % \label{tab:npov_data}
 \end{table}    
-
-\begin{itemize}
-    \item \textit{Parameter-efficient tuning} \(\Rightarrow\) small data and compute
-    \item Evaluation: 10.000 prompts, Gemini 2.0 Flash \textit{autorater}
-\end{itemize}
-
 \end{frame}
 
 % \begin{frame}{Results}
@@ -369,17 +399,189 @@ Cons:}
 \end{tabular}
 \end{frame}
 
+\begin{frame}{Example of Hallucination Removed}
+    \setlength{\columnsep}{1.5em} 
+    \scriptsize
+
+\textbf{User query:} Should Parents or Other Adults Be Able to Ban Books from Schools and Libraries?
+
+\vspace{0.5em}
+
+\begin{columns}[T, totalwidth=\textwidth]
+% ------------------- LEFT COLUMN -------------------
+\begin{column}{0.48\textwidth}
+{\color{mygreen}\textbf{Pros}}
+\begin{itemize}
+    \item[{\color{mygreen}\ding{118}}] \justifying{{\color{mygreen}Keeping books with inappropriate content out of libraries protects kids but doesn't stop people from reading those books or prevent authors from writing them.}}
+    \item[{\color{mygreen}\ding{118}}] \justifying{{\color{mygreen}Parents have the right to decide what material their children are exposed to and when.}}
+\end{itemize}
+
+\vspace{0.5em}
+{\color{myblue}\textbf{Cons}}
+\begin{itemize}
+    \item[\textcolor{myblue}{\ding{118}}] \justifying{{\color{myblue}People can better understand the world and their position in it by reading works that are regularly criticized.}}
+    \item[\textcolor{myblue}{\ding{118}}] \justifying{{\color{myblue}Books are a portal to different life experiences and reading encourages empathy and social-emotional development.}}
+\end{itemize}
+\end{column}
+
+% ------------------- RIGHT COLUMN -------------------
+\begin{column}{0.48\textwidth}
+\textbf{Neutral point-of-view answer (SFT):}
+
+{\scriptsize
+\justifying{
+This is a very controversial topic. Some people believe that parents and other adults should be able to ban books from schools and libraries. They say that {\color{mygreen}this would protect children from inappropriate content.} However, they also say that {\color{mygreen}this would not stop people from reading those books or prevent authors from writing them.} On the other hand, \mycolorbox{red!70!white}{others say that banning books is} \mycolorbox{red!70!white}{a way to protect children from the world} and that {\color{myblue}it is a way to encourage empathy and social-emotional development.} They also say that {\color{myblue}people can better understand the world and their position in it by reading a number of works that are regularly criticized.}}
+}
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+
+\begin{frame}{Example of Hallucination Removed}
+    \setlength{\columnsep}{1.5em} 
+    \scriptsize
+
+\textbf{User query:} Should Parents or Other Adults Be Able to Ban Books from Schools and Libraries?
+
+\vspace{0.5em}
+
+\begin{columns}[T, totalwidth=\textwidth]
+% ------------------- LEFT COLUMN -------------------
+\begin{column}{0.48\textwidth}
+{\color{mygreen}\textbf{Pros}}
+\begin{itemize}
+    \item[{\color{mygreen}\ding{118}}] \justifying{{\color{mygreen}Keeping books with inappropriate content out of libraries protects kids but doesn't stop people from reading those books or prevent authors from writing them.}}
+    \item[{\color{mygreen}\ding{118}}] \justifying{{\color{mygreen}Parents have the right to decide what material their children are exposed to and when.}}
+\end{itemize}
+
+\vspace{0.5em}
+{\color{myblue}\textbf{Cons}}
+\begin{itemize}
+    \item[\textcolor{myblue}{\ding{118}}] \justifying{{\color{myblue}People can better understand the world and their position in it by reading works that are regularly criticized.}}
+    \item[\textcolor{myblue}{\ding{118}}] \justifying{{\color{myblue}Books are a portal to different life experiences and reading encourages empathy and social-emotional development.}}
+\end{itemize}
+\end{column}
+
+% ------------------- RIGHT COLUMN -------------------
+\begin{column}{0.48\textwidth}
+\textbf{Neutral point-of-view answer (PE-RL):}
+
+{\scriptsize
+\justifying{
+I don't know what to make of this. Some people say that {\color{mygreen}keeping books with inappropriate content out of libraries protects kids but doesn't stop people from reading those books or prevent authors from writing them.} They say that {\color{mygreen}parents have the right to decide what material their children are exposed to and when}. Others say that {\color{myblue}people can better understand the world and their position in it by reading a number of works that are regularly criticized.} They also say that {\color{myblue}books are a portal to different life experiences and reading encourages empathy and social-emotional development.}}
+}
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
 \begin{frame}{Discussion}
     \begin{itemize}
         \item \textbf{Code}: {\color{lightblue}\url{github.com/leobianco/perl_hallucination}}
-    \end{itemize}
-    \vspace{0.75em}
-    Future work:
-    \vspace{0.75em}
-    \begin{itemize}
         \item Other tasks (summarization)
         \item Other models (Mistral, Qwen)
         \item Other synthetic hallucinations schemes (LLMs)
     \end{itemize}
 \end{frame}
 
+
+\subsection{Decoding-time Realignment of Language Models}
+
+\begin{frame}{Research questions}
+    \textbf{Problem}: coefficient \(\textcolor{lightblue}{\beta}\) is expensive to tune via grid-search
+    \\[1em]
+    \begin{tcolorbox}[colback=orange!60!white,
+                    colframe=orange!60!white]
+        \textbf{Research question \#2:} \\[0.5em]
+        Can we adjust regularization strength without retraining?
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Closed-form solution}
+    \begin{itemize}
+        \item Closed-form solution to alignment objective~\citep{ziegler2020finetuninglanguagemodelshuman}:
+        \begin{equation*}
+            \pi_\beta (y \vert x) = \frac{\pi_{\textup{SFT}}(y \vert x) \, \exp \left(\frac{1}{\beta} R(x, y) \right)}{\sum_{y^\prime} \pi_{\textup{SFT}}(y^\prime \vert x) \, \exp \left(\frac{1}{\beta} R(x, y^\prime) \right)}
+        \end{equation*}
+        \pause
+        \item For \(\beta^\prime = \beta / \lambda\), after some algebra:
+        \begin{equation*}
+            \pi_{\beta / \lambda} (y \vert x) = \frac{\pi_{\textup{SFT}} (y \vert x) \left( \frac{\pi_\beta (y \vert x)}{\pi_{\textup{SFT}}(y \vert x)} \right)^\lambda}{\sum_{y^\prime} \pi_{\textup{SFT}} (y^\prime \vert x) \left( \frac{\pi_\beta (y^\prime \vert x)}{\pi_{\textup{SFT}}(y \vert x)} \right)^\lambda}
+        \end{equation*}
+        \pause
+        \item Idea: change \(y, y^\prime \to\) current trajectory \(\{y_i\}_{i=1, \dotsc, t}\), fit \(\pi_\beta\)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Results}
+    \begin{itemize}
+        \item Approximate realigned model at \(\beta / \lambda\)~\citep{liu2024decodingtimerealignmentlanguagemodels}:
+    \end{itemize}
+        \begin{tcolorbox}[colback=yellow!45!white, colframe=yellow!45!white, top=-2pt]
+        \begin{equation*}
+            \hat{\pi}_{\beta/\lambda} (y_t \vert x, y_{<t}) \coloneqq 
+            \frac{\pi_{\textup{SFT}} (y_t \vert x, y_{<t}) \left( \frac{\pi_\beta (y_t \vert x, y_{<t})}{\pi_{\textup{SFT}}(y_t \vert x, y_{<t})} \right)^\lambda}{\sum_{y_t} \pi_{\textup{SFT}} (y_t \vert x, y_{<t}) \left( \frac{\pi_\beta (y_t \vert x, y_{<t})}{\pi_{\textup{SFT}}(y_t \vert x, y_{<t})} \right)^\lambda}
+        \end{equation*}
+    \end{tcolorbox}
+    \begin{itemize}
+        \item[] {\color{white}where \(h^{(t)}_{\textup{SFT}}\) and \(h^{(t)}_{\beta}\) are the logits
+        \begin{align*}
+            \begin{cases}
+                \pi_{\textup{SFT}} (\, \cdot \, \vert x, y_{< t}) &= \textup{softmax} (h^{(t)}_{\textup{SFT}}) \\[0.75em]
+                \pi_{\beta} (\, \cdot \, \vert x, y_{< t}) &= \textup{softmax} (h^{(t)}_{\beta})
+            \end{cases}
+        \end{align*}}
+    \end{itemize}
+    % \begin{itemize}
+    %     \item[{\color{white}\ding{118}}] {\color{white}\textbf{Code}: \url{https://github.com/liutianlin0121/decoding-time-realignment}}
+    % \end{itemize}
+\end{frame}
+
+\begin{frame}{Results}
+    \addtocounter{framenumber}{-1}
+    \begin{itemize}
+        \item Approximate realigned model at \(\beta / \lambda\)~\citep{liu2024decodingtimerealignmentlanguagemodels}:
+    \end{itemize}
+    \begin{tcolorbox}[colback=yellow!45!white, colframe=yellow!45!white]
+        \begin{equation*}
+            \hat{\pi}_{\beta/\lambda} (\, \cdot \, \vert x, y_{<t}) = \textup{softmax} \left[ \lambda h_\beta^{(t)} + (1 - \lambda) h_{\textup{SFT}}^{(t)} \right]
+        \end{equation*}
+    \end{tcolorbox}
+    \begin{itemize}
+        \item[] where \(h^{(t)}_{\textup{SFT}}\) and \(h^{(t)}_{\beta}\) are the logits 
+        \begin{align*}
+            \begin{cases}
+                \pi_{\textup{SFT}} (\, \cdot \, \vert x, y_{< t}) &= \textup{softmax} (h^{(t)}_{\textup{SFT}}) \\[0.75em]
+                \pi_{\beta} (\, \cdot \, \vert x, y_{< t}) &= \textup{softmax} (h^{(t)}_{\beta})
+            \end{cases}
+        \end{align*}
+    \end{itemize}
+    % \begin{itemize}
+    %     \item \textbf{Code}: {\color{lightblue}\url{https://github.com/liutianlin0121/decoding-time-realignment}}
+    % \end{itemize}
+\end{frame}
+
+\begin{frame}{Results}
+    \begin{figure}
+        \centering
+        \includegraphics[scale=0.55]{figures/part2/dera-hallucination-single-col.pdf}
+    \end{figure}
+\end{frame}
+
+% \begin{frame}{Results}
+%     \begin{figure}
+%         \centering
+%         \includegraphics[scale=0.5]{figures/part2/length_reward_result_no_sax.pdf}
+%     \end{figure}
+% \end{frame}
+
+% \begin{frame}{Discussion}
+%     \begin{itemize}
+%         \item ?
+%     \end{itemize}
+% \end{frame}

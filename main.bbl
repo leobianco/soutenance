@@ -1,4 +1,4 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{13}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -53,6 +53,11 @@ Tyler~A. Chang, Katrin Tomanek, Jessica Hoffmann, Nithum Thain, Erin van Liemt, 
 Paul Christiano, Jan Leike, Tom~B. Brown, Miljan Martic, Shane Legg, and Dario Amodei.
 \newblock Deep reinforcement learning from human preferences, 2023.
 \newblock URL \url{https://arxiv.org/abs/1706.03741}.
+
+\bibitem[Hu et~al.(2021)Hu, Shen, Wallis, Allen-Zhu, Li, Wang, Wang, and Chen]{hu2021loralowrankadaptationlarge}
+Edward~J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu~Wang, and Weizhu Chen.
+\newblock Lora: Low-rank adaptation of large language models, 2021.
+\newblock URL \url{https://arxiv.org/abs/2106.09685}.
 
 \bibitem[Ziegler et~al.(2020)Ziegler, Stiennon, Wu, Brown, Radford, Amodei, Christiano, and Irving]{ziegler2020finetuninglanguagemodelshuman}
 Daniel~M. Ziegler, Nisan Stiennon, Jeffrey Wu, Tom~B. Brown, Alec Radford, Dario Amodei, Paul Christiano, and Geoffrey Irving.
