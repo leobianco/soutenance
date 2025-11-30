@@ -168,6 +168,7 @@
 \begin{minipage}[t][10em][t]{\textwidth}
 
     \only<1>{
+        % \addtocounter{framenumber}{1}
         \vspace{1em}
         \textit{Pre-training}: given a dataset 
         \(\mathcal{D}_{\textup{pre}}\), find \(\theta\) minimizing
@@ -180,6 +181,7 @@
     }
 
     \only<2>{
+        \addtocounter{framenumber}{1}
         \vspace{1em}
         \textit{SFT}: given a dataset \(\mathcal{D}_{\textup{SFT}}\), find \(\theta\) minimizing
         \begin{equation*}
@@ -191,7 +193,8 @@
     }
 
     \only<4-5>{
-        \textcolor{myorange}{\textit{Alignment}} via RL~\citep{christiano2023deepreinforcementlearninghuman}:\\[-0.25em]
+        \addtocounter{framenumber}{1}
+        \textcolor{myorange}{\textit{Alignment}} to human preferences via Reinforcement Learning~\citep{christiano2023deepreinforcementlearninghuman}:\\[-0.25em]
         \begin{enumerate}
             \item<4-5> Train a reward model {\color{myorange}\(R\)} on \(\mathcal{D}_{\textup{RM}}\)
             \item<5> Update the writer model \(\pi_{\textup{SFT}}\)
@@ -201,13 +204,14 @@
         \begin{equation*}
             \pi_{{\color{lightblue}\beta}}
             \in \arg\max_{\pi}\,
-            \mathbb{E}_{\substack{x \sim \mathcal{D}_{\textup{RL}} \\ y \sim p(y\mid x)}}\!\left[{\color{myorange}R(x, y)}\right]
+            \mathbb{E}_{\substack{x \sim \mathcal{D}_{\textup{RL}} \\ y \sim \pi (y\mid x)}}\!\left[{\color{myorange}R(x, y)}\right]
             - {\color{lightblue}\beta}\,\mathrm{KL}\!\left(\pi \,\Vert\, \pi_{\textup{SFT}}\right)
         \end{equation*}
         }
     }
 
     \only<6>{
+        \addtocounter{framenumber}{1}
         \vspace{1em}
         \textit{Parameter-efficient RL} \(\Rightarrow\) Low-Rank Adaptation (LoRA)~\citep{hu2021loralowrankadaptationlarge}:
         \begin{equation*}
@@ -216,6 +220,7 @@
     }
 
     \only<7>{
+    \addtocounter{framenumber}{1}
     \vspace{1em}
     Evaluation via \textit{autorater}:\\[0.75em]
     \begin{center}
@@ -230,6 +235,7 @@
 % Slide 3 content: Title + full-page image
 % ------------------------
 \only<3>{
+    \addtocounter{framenumber}{1}
     \frametitle{Retrieval Augmented Generation: 
     NPOV Task~\citep{chang2024detectinghallucinationcoverageerrors}}
 
@@ -273,9 +279,9 @@
 \subsection{Reducing Hallucinations with Synthetic Hallucinations}
 
 \begin{frame}{Research questions}
-    \textbf{Problem}: \(\mathcal{D}_{\textup{RM}}\) is costly, time-consuming, and error-prone to get
+    \textbf{Problem}: \(\mathcal{D}_{\textup{RM}}\) is costly, time-consuming, and error-prone to get\pause
     \\[1em]
-    Synthetic hallucinations are cheap, fast, error-free
+    \(\hookrightarrow\) Synthetic hallucinations are cheap, fast, error-free
     \\[1em]
     \begin{tcolorbox}[colback=orange!60!white,
                     colframe=orange!60!white]
