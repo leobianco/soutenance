@@ -193,25 +193,25 @@
     \only<4-5>{
         \textcolor{myorange}{\textit{Alignment}} via RL~\citep{christiano2023deepreinforcementlearninghuman}:\\[-0.25em]
         \begin{enumerate}
-            \item<4-5> Train a reward model \(\!R\) on \(\mathcal{D}_{\textup{RM}}\)
+            \item<4-5> Train a reward model {\color{myorange}\(R\)} on \(\mathcal{D}_{\textup{RM}}\)
             \item<5> Update the writer model \(\pi_{\textup{SFT}}\)
         \end{enumerate}
 
         \only<5>{
         \begin{equation*}
-            \pi_{\beta}
+            \pi_{{\color{lightblue}\beta}}
             \in \arg\max_{\pi}\,
-            \mathbb{E}_{\substack{x \sim \mathcal{D}_{\textup{RL}} \\ y \sim p(y\mid x)}}\!\left[R(x, y)\right]
-            - \beta\,\mathrm{KL}\!\left(\pi \,\Vert\, \pi_{\textup{SFT}}\right)
+            \mathbb{E}_{\substack{x \sim \mathcal{D}_{\textup{RL}} \\ y \sim p(y\mid x)}}\!\left[{\color{myorange}R(x, y)}\right]
+            - {\color{lightblue}\beta}\,\mathrm{KL}\!\left(\pi \,\Vert\, \pi_{\textup{SFT}}\right)
         \end{equation*}
         }
     }
 
     \only<6>{
         \vspace{1em}
-        \textit{Parameter-efficient tuning} \(\Rightarrow\) Low-Rank Adaptation (LoRA)~\citep{hu2021loralowrankadaptationlarge}:
+        \textit{Parameter-efficient RL} \(\Rightarrow\) Low-Rank Adaptation (LoRA)~\citep{hu2021loralowrankadaptationlarge}:
         \begin{equation*}
-            \theta = \theta_{\textup{SFT}} + A B
+            \theta = \theta_{\textup{SFT}} + \underbrace{A B}_{\text{low rank}}
         \end{equation*}
     }
 
@@ -480,16 +480,6 @@ I don't know what to make of this. Some people say that {\color{mygreen}keeping 
 
 \end{frame}
 
-\begin{frame}{Discussion}
-    \begin{itemize}
-        \item \textbf{Code}: {\color{lightblue}\url{github.com/leobianco/perl_hallucination}}
-        \item Other tasks (summarization)
-        \item Other models (Mistral, Qwen)
-        \item Other synthetic hallucinations schemes (LLMs)
-    \end{itemize}
-\end{frame}
-
-
 \subsection{Decoding-time Realignment of Language Models}
 
 \begin{frame}{Research questions}
@@ -522,12 +512,11 @@ I don't know what to make of this. Some people say that {\color{mygreen}keeping 
     \begin{itemize}
         \item Approximate realigned model at \(\beta / \lambda\)~\citep{liu2024decodingtimerealignmentlanguagemodels}:
     \end{itemize}
-        \begin{tcolorbox}[colback=yellow!45!white, colframe=yellow!45!white, top=-2pt]
+        \vspace{0.75em}
         \begin{equation*}
             \hat{\pi}_{\beta/\lambda} (y_t \vert x, y_{<t}) \coloneqq 
             \frac{\pi_{\textup{SFT}} (y_t \vert x, y_{<t}) \left( \frac{\pi_\beta (y_t \vert x, y_{<t})}{\pi_{\textup{SFT}}(y_t \vert x, y_{<t})} \right)^\lambda}{\sum_{y_t} \pi_{\textup{SFT}} (y_t \vert x, y_{<t}) \left( \frac{\pi_\beta (y_t \vert x, y_{<t})}{\pi_{\textup{SFT}}(y_t \vert x, y_{<t})} \right)^\lambda}
         \end{equation*}
-    \end{tcolorbox}
     \begin{itemize}
         \item[] {\color{white}where \(h^{(t)}_{\textup{SFT}}\) and \(h^{(t)}_{\beta}\) are the logits
         \begin{align*}
@@ -547,11 +536,10 @@ I don't know what to make of this. Some people say that {\color{mygreen}keeping 
     \begin{itemize}
         \item Approximate realigned model at \(\beta / \lambda\)~\citep{liu2024decodingtimerealignmentlanguagemodels}:
     \end{itemize}
-    \begin{tcolorbox}[colback=yellow!45!white, colframe=yellow!45!white]
+        \vspace{0.75em}
         \begin{equation*}
             \hat{\pi}_{\beta/\lambda} (\, \cdot \, \vert x, y_{<t}) = \textup{softmax} \left[ \lambda h_\beta^{(t)} + (1 - \lambda) h_{\textup{SFT}}^{(t)} \right]
         \end{equation*}
-    \end{tcolorbox}
     \begin{itemize}
         \item[] where \(h^{(t)}_{\textup{SFT}}\) and \(h^{(t)}_{\beta}\) are the logits 
         \begin{align*}
@@ -571,6 +559,14 @@ I don't know what to make of this. Some people say that {\color{mygreen}keeping 
         \centering
         \includegraphics[scale=0.55]{figures/part2/dera-hallucination-single-col.pdf}
     \end{figure}
+\end{frame}
+
+\begin{frame}{Discussion}
+    \begin{itemize}
+        \item \textbf{Main takeaway}: efficient hallucination reduction using PE-RL with synthetic data and DeRA hyperparameter optimization.
+        \item \textbf{Code}: {\color{lightblue}\url{github.com/leobianco/perl_hallucination}}
+        \item Perspectives: other tasks (summarization), models (Mistral, Qwen), synthetic hallucinations schemes (LLMs)
+    \end{itemize}
 \end{frame}
 
 % \begin{frame}{Results}

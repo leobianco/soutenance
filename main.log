@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.20)  28 NOV 2025 18:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.20)  30 NOV 2025 11:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1403,34 +1403,34 @@ Package pdftex.def Info: figures/part1/sbm_outliers.png  used on input line 170.
 
 ]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
-(Font)              scaled to size 10.95pt on input line 222.
-LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 222.
+(Font)              scaled to size 10.95pt on input line 225.
+LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 225.
  (c:/texlive/2025/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.95pt on input line 222.
+(Font)              scaled to size 10.95pt on input line 225.
 
 
 [16
 
 {c:/texlive/2025/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}]
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 10.0pt on input line 322.
+(Font)              scaled to size 10.0pt on input line 325.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 7.3pt on input line 322.
+(Font)              scaled to size 7.3pt on input line 325.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 5.5pt on input line 322.
+(Font)              scaled to size 5.5pt on input line 325.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 7.3pt on input line 322.
+(Font)              scaled to size 7.3pt on input line 325.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 322.
+(Font)              scaled to size 12.0pt on input line 325.
 File: figures/part1/sbm_outliers.png Graphic file (type png)
 <use figures/part1/sbm_outliers.png>
-Package pdftex.def Info: figures/part1/sbm_outliers.png  used on input line 322.
+Package pdftex.def Info: figures/part1/sbm_outliers.png  used on input line 325.
 (pdftex.def)             Requested size: 138.2795pt x 103.70702pt.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
-(Font)              scaled to size 14.4pt on input line 322.
+(Font)              scaled to size 14.4pt on input line 325.
 
 
 [17
@@ -1439,7 +1439,7 @@ LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
 <figures/part1/sbm_outliers_init.png, id=394, 578.16pt x 433.62pt>
 File: figures/part1/sbm_outliers_init.png Graphic file (type png)
 <use figures/part1/sbm_outliers_init.png>
-Package pdftex.def Info: figures/part1/sbm_outliers_init.png  used on input line 322.
+Package pdftex.def Info: figures/part1/sbm_outliers_init.png  used on input line 325.
 (pdftex.def)             Requested size: 138.2795pt x 103.70702pt.
 
 
@@ -1449,7 +1449,7 @@ Package pdftex.def Info: figures/part1/sbm_outliers_init.png  used on input line
 <figures/part1/sbm_outliers_candidate.png, id=401, 578.16pt x 433.62pt>
 File: figures/part1/sbm_outliers_candidate.png Graphic file (type png)
 <use figures/part1/sbm_outliers_candidate.png>
-Package pdftex.def Info: figures/part1/sbm_outliers_candidate.png  used on input line 322.
+Package pdftex.def Info: figures/part1/sbm_outliers_candidate.png  used on input line 325.
 (pdftex.def)             Requested size: 138.2795pt x 103.70702pt.
 
 
@@ -1459,7 +1459,7 @@ Package pdftex.def Info: figures/part1/sbm_outliers_candidate.png  used on input
 <figures/part1/sbm_outliers_current.png, id=409, 578.16pt x 433.62pt>
 File: figures/part1/sbm_outliers_current.png Graphic file (type png)
 <use figures/part1/sbm_outliers_current.png>
-Package pdftex.def Info: figures/part1/sbm_outliers_current.png  used on input line 322.
+Package pdftex.def Info: figures/part1/sbm_outliers_current.png  used on input line 325.
 (pdftex.def)             Requested size: 138.2795pt x 103.70702pt.
 
 
@@ -1468,7 +1468,7 @@ Package pdftex.def Info: figures/part1/sbm_outliers_current.png  used on input l
  <./figures/part1/sbm_outliers_current.png>]
 File: figures/part1/sbm_outliers_current.png Graphic file (type png)
 <use figures/part1/sbm_outliers_current.png>
-Package pdftex.def Info: figures/part1/sbm_outliers_current.png  used on input line 322.
+Package pdftex.def Info: figures/part1/sbm_outliers_current.png  used on input line 325.
 (pdftex.def)             Requested size: 138.2795pt x 103.70702pt.
 
 
@@ -1478,7 +1478,7 @@ Package pdftex.def Info: figures/part1/sbm_outliers_current.png  used on input l
 <figures/part1/sbm_outliers_ideal.png, id=421, 578.16pt x 433.62pt>
 File: figures/part1/sbm_outliers_ideal.png Graphic file (type png)
 <use figures/part1/sbm_outliers_ideal.png>
-Package pdftex.def Info: figures/part1/sbm_outliers_ideal.png  used on input line 322.
+Package pdftex.def Info: figures/part1/sbm_outliers_ideal.png  used on input line 325.
 (pdftex.def)             Requested size: 138.2795pt x 103.70702pt.
 
 
@@ -1487,7 +1487,7 @@ Package pdftex.def Info: figures/part1/sbm_outliers_ideal.png  used on input lin
  <./figures/part1/sbm_outliers_ideal.png>]
 File: figures/part1/jazz_sc_graph.png Graphic file (type png)
 <use figures/part1/jazz_sc_graph.png>
-Package pdftex.def Info: figures/part1/jazz_sc_graph.png  used on input line 330.
+Package pdftex.def Info: figures/part1/jazz_sc_graph.png  used on input line 333.
 (pdftex.def)             Requested size: 307.28987pt x 205.61186pt.
 
 
@@ -1497,7 +1497,7 @@ Package pdftex.def Info: figures/part1/jazz_sc_graph.png  used on input line 330
 <figures/part1/jazz_SA_graph.png, id=433, 686.565pt x 459.3963pt>
 File: figures/part1/jazz_SA_graph.png Graphic file (type png)
 <use figures/part1/jazz_SA_graph.png>
-Package pdftex.def Info: figures/part1/jazz_SA_graph.png  used on input line 339.
+Package pdftex.def Info: figures/part1/jazz_SA_graph.png  used on input line 342.
 (pdftex.def)             Requested size: 307.28987pt x 205.61186pt.
 
 
@@ -1507,15 +1507,15 @@ Package pdftex.def Info: figures/part1/jazz_SA_graph.png  used on input line 339
 <figures/part1/ideal_SA_horizontal.pdf, id=440, 1056.94875pt x 352.31625pt>
 File: figures/part1/ideal_SA_horizontal.pdf Graphic file (type pdf)
 <use figures/part1/ideal_SA_horizontal.pdf>
-Package pdftex.def Info: figures/part1/ideal_SA_horizontal.pdf  used on input line 357.
+Package pdftex.def Info: figures/part1/ideal_SA_horizontal.pdf  used on input line 360.
 (pdftex.def)             Requested size: 303.94298pt x 101.3179pt.
 <figures/part1/simulated_annealing_true_outliers.png, id=441, 686.565pt x 459.3963pt>
 File: figures/part1/simulated_annealing_true_outliers.png Graphic file (type png)
 <use figures/part1/simulated_annealing_true_outliers.png>
-Package pdftex.def Info: figures/part1/simulated_annealing_true_outliers.png  used on input line 357.
+Package pdftex.def Info: figures/part1/simulated_annealing_true_outliers.png  used on input line 360.
 (pdftex.def)             Requested size: 170.34178pt x 113.9836pt.
 
-Overfull \vbox (19.31828pt too high) detected at line 357
+Overfull \vbox (19.31828pt too high) detected at line 360
  []
 
 
@@ -1526,15 +1526,15 @@ Overfull \vbox (19.31828pt too high) detected at line 357
 <figures/part1/filtering_horizontal.pdf, id=464, 1056.94875pt x 352.31625pt>
 File: figures/part1/filtering_horizontal.pdf Graphic file (type pdf)
 <use figures/part1/filtering_horizontal.pdf>
-Package pdftex.def Info: figures/part1/filtering_horizontal.pdf  used on input line 373.
+Package pdftex.def Info: figures/part1/filtering_horizontal.pdf  used on input line 376.
 (pdftex.def)             Requested size: 303.94298pt x 101.3179pt.
 <figures/part1/filtering_true_outliers.png, id=465, 686.565pt x 459.3963pt>
 File: figures/part1/filtering_true_outliers.png Graphic file (type png)
 <use figures/part1/filtering_true_outliers.png>
-Package pdftex.def Info: figures/part1/filtering_true_outliers.png  used on input line 373.
+Package pdftex.def Info: figures/part1/filtering_true_outliers.png  used on input line 376.
 (pdftex.def)             Requested size: 170.34178pt x 113.9836pt.
 
-Overfull \vbox (18.22322pt too high) detected at line 373
+Overfull \vbox (18.22322pt too high) detected at line 376
  []
 
 
@@ -1545,7 +1545,7 @@ Overfull \vbox (18.22322pt too high) detected at line 373
 <figures/part1/multirun_gamma.pdf, id=488, 722.7pt x 433.62pt>
 File: figures/part1/multirun_gamma.pdf Graphic file (type pdf)
 <use figures/part1/multirun_gamma.pdf>
-Package pdftex.def Info: figures/part1/multirun_gamma.pdf  used on input line 382.
+Package pdftex.def Info: figures/part1/multirun_gamma.pdf  used on input line 385.
 (pdftex.def)             Requested size: 307.28987pt x 184.37538pt.
 
 
@@ -1777,31 +1777,34 @@ Overfull \vbox (5.35155pt too high) detected at line 481
 [52
 
 ]
-
-[53
-
-]
-<figures/part2/dera-hallucination-single-col.pdf, id=901, 298.75616pt x 412.0504pt>
+<figures/part2/dera-hallucination-single-col.pdf, id=895, 298.75616pt x 412.0504pt>
 File: figures/part2/dera-hallucination-single-col.pdf Graphic file (type pdf)
 <use figures/part2/dera-hallucination-single-col.pdf>
-Package pdftex.def Info: figures/part2/dera-hallucination-single-col.pdf  used on input line 574.
+Package pdftex.def Info: figures/part2/dera-hallucination-single-col.pdf  used on input line 562.
 (pdftex.def)             Requested size: 164.31639pt x 226.6284pt.
 
-Overfull \vbox (12.03195pt too high) detected at line 574
+Overfull \vbox (12.03195pt too high) detected at line 562
  []
 
 
 
+[53
+
+ <./figures/part2/dera-hallucination-single-col.pdf>]
+
 [54
 
- <./figures/part2/dera-hallucination-single-col.pdf>])
+])
+LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
+(Font)              scaled to size 12.0pt on input line 54.
+
 
 [55
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\translate ' on input line 52.
+(hyperref)                removing `\translate ' on input line 56.
 
 (./main.bbl
 
@@ -1846,18 +1849,18 @@ L3 programming layer <2020/03/25>
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: EE2B9A119F195B97F9D4E706FCF4985C;1648.
+(rerunfilecheck)             Checksum: 11DD0AE286EE43A0D4AF0FB56A8C3856;1648.
  ) 
 Here is how much of TeX's memory you used:
- 35004 strings out of 467885
- 673770 string characters out of 5438197
+ 35000 strings out of 467885
+ 673685 string characters out of 5438197
  1016903 words of memory out of 5000000
- 62667 multiletter control sequences out of 15000+600000
- 722489 words of font info for 171 fonts, out of 8000000 for 9000
+ 62663 multiletter control sequences out of 15000+600000
+ 725312 words of font info for 172 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,19n,134p,843b,947s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newpx/pxsys.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/txexs.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/txsym.pfb><c:/texlive/2025/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newpx/zplb.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newpx/zplr.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on main.pdf (58 pages, 7536423 bytes).
+Output written on main.pdf (58 pages, 7536856 bytes).
 PDF statistics:
  1157 PDF objects out of 1200 (max. 8388607)
  801 compressed objects within 9 object streams

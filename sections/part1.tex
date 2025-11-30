@@ -192,9 +192,12 @@
 \begin{frame}{Results}
     \begin{itemize}
         \item Idea: find subgraph \(S\) excluding worst outliers
+        \begin{equation*}
+            \Rightarrow \quad \hat{\Gamma} = \left(\sum_{i \in S_k j \in S_l} A_{i j}\right) / \vert S_k \vert \vert S_l \vert \quad \textup{is a good estimator}
+        \end{equation*}
+        \pause
         \item \textbf{Contribution}: extend bound in~\citet{pmlr-v178-acharya22a} to \(K > 1\)
     \end{itemize}
-    \pause
     \begin{tcolorbox}[colback=yellow!45!white,
                     colframe=yellow!45!white]
         \textbf{Theorem~\citep{bianco2025subsearchrobustestimationoutlier}.} Let \(S\) be a subgraph clustered into \(S_1, \dotsc, S_K\), \(\Omega_k\) the nodes in community \(k\), \(\mathcal{I}\) the set of inlier nodes.
@@ -383,9 +386,9 @@ to minimize \(c(S) = \|A_S - \hat{Q}(S)\|_{\textup{op}}\)
 
 \begin{frame}{Discussion}
     \begin{itemize}
-        \item \textbf{Main take away}: ``exploring'' the space of subgraphs \(\Rightarrow\) find subgraphs avoiding outliers
-        \item Limitation \# 1: can we rigorously prove robustness?
-        \item Limitation \# 2: can we provide faster rates?
+        \item \textbf{Main takeaway}: ``exploring'' the space of subgraphs \(\Rightarrow\) find subgraphs avoiding outliers
+        \item Perspective \# 1: can we rigorously prove robustness?
+        \item Perspective \# 2: can we provide faster rates?
     \end{itemize}
     
 \end{frame}

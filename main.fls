@@ -839,6 +839,7 @@ INPUT ./figures/part2/dera-hallucination-single-col.pdf
 INPUT ./figures/part2/dera-hallucination-single-col.pdf
 INPUT ./figures/part2/dera-hallucination-single-col.pdf
 INPUT ./figures/part2/dera-hallucination-single-col.pdf
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-t1.tfm
 INPUT ./main.bbl
 INPUT ./main.bbl
 INPUT main.bbl
