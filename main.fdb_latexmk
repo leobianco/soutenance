@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1764502791.56333 "main.aux" "main.bbl" "main" 1764502803.92776 0
+["bibtex main"] 1764578141.73621 "main.aux" "main.bbl" "main" 1764578290.29332 0
   "./references.bib" 1764334246 6518 334d19eb7171d6dbbaee3d1f6c9ad17f ""
   "c:/texlive/2025/texmf-dist/bibtex/bst/natbib/unsrtnat.bst" 1750424295 24550 a41a6405f4de768c43e871d9fbce2bc8 ""
-  "main.aux" 1764502802 14980 d58dd3a7677ebe50881f5fe1dd702b7e "pdflatex"
+  "main.aux" 1764578288 14980 0a36539409f59de56ab6a90194ec612e "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1764502792.24263 "c:/Users/leona/base/01_Work/soutenance/main.tex" "main.pdf" "main" 1764502803.92885 0
-  "c:/Users/leona/base/01_Work/soutenance/main.tex" 1764500371 1870 7a4fb11bce25ce57c997e6f3ada933ea ""
+["pdflatex"] 1764578276.39122 "c:/Users/leona/base/01_Work/soutenance/main.tex" "main.pdf" "main" 1764578290.29415 0
+  "c:/Users/leona/base/01_Work/soutenance/main.tex" 1764578128 1888 4a26dc1846679bb0a5f9540aafdafe12 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc" 1750424329 3877 2ca811886181a05a861d20a35de75e06 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc" 1750424334 3136 bbe665bd0bb471a2da1e8fd326cff9fa ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1750424334 2914 fdbc4a54b9bc76f4551b5303f2737d33 ""
@@ -328,17 +328,17 @@
   "figures/part2/npov_perl_struct_reward.png" 1763473785 190118 b420d1d3757335ec85069b81fc9da02a ""
   "figures/part2/npov_rm_organic.png" 1763484136 93817 b1f52a0046d1912f42cc78df6a349369 ""
   "figures/part2/npov_rm_struct.png" 1763473482 200571 078ff2f44b4cb753de2d24ce50872753 ""
-  "main.aux" 1764502802 14980 d58dd3a7677ebe50881f5fe1dd702b7e "pdflatex"
-  "main.bbl" 1764502792 4912 a5a9166f633c0ad24399c4292ba71fc0 "bibtex main"
-  "main.nav" 1764502802 6880 d23a8cdfc5def9eaeed26953539c06c9 "pdflatex"
-  "main.out" 1764502802 1648 ee2b9a119f195b97f9d4e706fcf4985c "pdflatex"
-  "main.tex" 1764500371 1870 7a4fb11bce25ce57c997e6f3ada933ea ""
-  "main.toc" 1764502802 428 48bbf48b6abca1f63497af7bced2edfc "pdflatex"
+  "main.aux" 1764578288 14980 0a36539409f59de56ab6a90194ec612e "pdflatex"
+  "main.bbl" 1764578142 4912 a5a9166f633c0ad24399c4292ba71fc0 "bibtex main"
+  "main.nav" 1764578288 6880 88feb82ce60360aca29582580a80077f "pdflatex"
+  "main.out" 1764578288 1648 ee2b9a119f195b97f9d4e706fcf4985c "pdflatex"
+  "main.tex" 1764578128 1888 4a26dc1846679bb0a5f9540aafdafe12 ""
+  "main.toc" 1764578288 428 48bbf48b6abca1f63497af7bced2edfc "pdflatex"
   "preamble.tex" 1764253332 3702 3a38265b5898a552daf42a0f5633e53b ""
   "sections/appendix.tex" 1764327875 2560 c230f3e51c0509d72176c30a6721e542 ""
   "sections/intro.tex" 1764242573 1157 90d1bbee29e4d6b050dc7bdc8d8ffd8a ""
   "sections/part1.tex" 1764501773 17411 aad471ae2dd3ee5ee71dc9bf2fc7a0c8 ""
-  "sections/part2.tex" 1764502778 25349 6af6b6648aa2676fa0a98d0e6d193388 ""
+  "sections/part2.tex" 1764578275 26676 0b949a3d77b7c0bcc6e4d72ea2d352ca ""
   (generated)
   "main.aux"
   "main.log"

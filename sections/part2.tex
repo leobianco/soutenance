@@ -196,8 +196,8 @@
         \addtocounter{framenumber}{1}
         \textcolor{myorange}{\textit{Alignment}} to human preferences via Reinforcement Learning~\citep{christiano2023deepreinforcementlearninghuman}:\\[-0.25em]
         \begin{enumerate}
-            \item<4-5> Train a reward model {\color{myorange}\(R\)} on \(\mathcal{D}_{\textup{RM}}\)
-            \item<5> Update the writer model \(\pi_{\textup{SFT}}\)
+            \item<4-5> Train a \textit{reward} model {\color{myorange}\(R\)} on \(\mathcal{D}_{\textup{RM}}\)
+            \item<5> Update the \textit{writer} model \(\pi_{\textup{SFT}}\)
         \end{enumerate}
 
         \only<5>{
@@ -279,15 +279,25 @@
 \subsection{Reducing Hallucinations with Synthetic Hallucinations}
 
 \begin{frame}{Research questions}
-    \textbf{Problem}: \(\mathcal{D}_{\textup{RM}}\) is costly, time-consuming, and error-prone to get\pause
+\begin{minipage}[t][10em][t]{\textwidth}
+    \only<1->{\textbf{Problem}: \(\mathcal{D}_{\textup{RM}}\) is costly, time-consuming, and error-prone to get}
     \\[1em]
-    \(\hookrightarrow\) Synthetic hallucinations are cheap, fast, error-free
-    \\[1em]
+    {\only<2->{
+    Idea: synthetic hallucinations are cheap, fast, error-free
+    % \\[1em]
     \begin{tcolorbox}[colback=orange!60!white,
                     colframe=orange!60!white]
         \textbf{Research question \#1:} \\[0.5em]
         Can synthetic hallucinations be used instead?
     \end{tcolorbox}
+        }
+    }
+\end{minipage}
+\begin{center}
+    \only<1->{
+        \includegraphics[width=0.7\textwidth,page=3]{figures/part2/alignment_diagram.pdf}
+    }
+\end{center}
 \end{frame}
 
 \begin{frame}{Creating Synthetic Hallucinations~\citep{chang2024detectinghallucinationcoverageerrors}}
@@ -324,7 +334,8 @@ Neutral answer:\\[0.75em]
 ``Some people support marijuana legalization because {\color{mygreen}it would boost the economy} and {\color{mygreen}most studies demonstrate it is a safe drug}. Others oppose it because they see \mycolorbox{red!70!white}{marijuana as a} \mycolorbox{red!70!white}{gateway drug}, and its {\color{lightblue}legalization would bring many costs}.''
 \end{frame}
 
-\begin{frame}{Creating Synthetic Hallucinations~\citep{chang2024detectinghallucinationcoverageerrors}}
+\begin{frame}{Creating Synthetic Hallucinations}
+    NPOV dataset~\citep{chang2024detectinghallucinationcoverageerrors}:
 \begin{table}[h]
     \centering
     \begin{tabular}{lcccc}
@@ -489,13 +500,28 @@ I don't know what to make of this. Some people say that {\color{mygreen}keeping 
 \subsection{Decoding-time Realignment of Language Models}
 
 \begin{frame}{Research questions}
-    \textbf{Problem}: coefficient \(\textcolor{lightblue}{\beta}\) is expensive to tune via grid-search
-    \\[1em]
+    \begin{minipage}[t][7em][t]{\textwidth}
+    \only<1->{
+    \textbf{Problem}: coefficient \(\textcolor{lightblue}{\beta}\) is expensive to tune via grid-search}
+    % \\[1em]
+    \only<2->{
     \begin{tcolorbox}[colback=orange!60!white,
                     colframe=orange!60!white]
         \textbf{Research question \#2:} \\[0.5em]
         Can we adjust regularization strength without retraining?
-    \end{tcolorbox}
+    \end{tcolorbox}}
+    \end{minipage}
+    \begin{center}
+        \begin{equation*}
+            \pi_{{\color{lightblue}\beta}}
+            \in \arg\max_{\pi}\,
+            \mathbb{E}_{\substack{x \sim \mathcal{D}_{\textup{RL}} \\ y \sim \pi (y\mid x)}}\!\left[{\color{myorange}R(x, y)}\right]
+            - {\color{lightblue}\beta}\,\mathrm{KL}\!\left(\pi \,\Vert\, \pi_{\textup{SFT}}\right)
+        \end{equation*}\\[0.5em]
+        \only<1->{
+            \includegraphics[width=0.7\textwidth,page=5]{figures/part2/alignment_diagram.pdf}
+        }
+    \end{center}
 \end{frame}
 
 \begin{frame}{Closed-form solution}
@@ -510,42 +536,46 @@ I don't know what to make of this. Some people say that {\color{mygreen}keeping 
             \pi_{\beta / \lambda} (y \vert x) = \frac{\pi_{\textup{SFT}} (y \vert x) \left( \frac{\pi_\beta (y \vert x)}{\pi_{\textup{SFT}}(y \vert x)} \right)^\lambda}{\sum_{y^\prime} \pi_{\textup{SFT}} (y^\prime \vert x) \left( \frac{\pi_\beta (y^\prime \vert x)}{\pi_{\textup{SFT}}(y \vert x)} \right)^\lambda}
         \end{equation*}
         \pause
-        \item Idea: change \(y, y^\prime \to\) current trajectory \(\{y_i\}_{i=1, \dotsc, t}\), fit \(\pi_\beta\)
+        \item Sum over \(y^\prime\), and \(\pi_\beta\) on functional space \(\rightarrow\) intractable
     \end{itemize}
-\end{frame}
-
-\begin{frame}{Results}
-    \begin{itemize}
-        \item Approximate realigned model at \(\beta / \lambda\)~\citep{liu2024decodingtimerealignmentlanguagemodels}:
-    \end{itemize}
-        \vspace{0.75em}
-        \begin{equation*}
-            \hat{\pi}_{\beta/\lambda} (y_t \vert x, y_{<t}) \coloneqq 
-            \frac{\pi_{\textup{SFT}} (y_t \vert x, y_{<t}) \left( \frac{\pi_\beta (y_t \vert x, y_{<t})}{\pi_{\textup{SFT}}(y_t \vert x, y_{<t})} \right)^\lambda}{\sum_{y_t} \pi_{\textup{SFT}} (y_t \vert x, y_{<t}) \left( \frac{\pi_\beta (y_t \vert x, y_{<t})}{\pi_{\textup{SFT}}(y_t \vert x, y_{<t})} \right)^\lambda}
-        \end{equation*}
-    \begin{itemize}
-        \item[] {\color{white}where \(h^{(t)}_{\textup{SFT}}\) and \(h^{(t)}_{\beta}\) are the logits
-        \begin{align*}
-            \begin{cases}
-                \pi_{\textup{SFT}} (\, \cdot \, \vert x, y_{< t}) &= \textup{softmax} (h^{(t)}_{\textup{SFT}}) \\[0.75em]
-                \pi_{\beta} (\, \cdot \, \vert x, y_{< t}) &= \textup{softmax} (h^{(t)}_{\beta})
-            \end{cases}
-        \end{align*}}
-    \end{itemize}
-    % \begin{itemize}
-    %     \item[{\color{white}\ding{118}}] {\color{white}\textbf{Code}: \url{https://github.com/liutianlin0121/decoding-time-realignment}}
-    % \end{itemize}
 \end{frame}
 
 \begin{frame}{Results}
     \addtocounter{framenumber}{-1}
     \begin{itemize}
+        \item Idea: change \(y, y^\prime \to\) current trajectory \(\{y_i\}_{i=1, \dotsc, t}\), fit \(\pi_\beta\)
         \item Approximate realigned model at \(\beta / \lambda\)~\citep{liu2024decodingtimerealignmentlanguagemodels}:
     \end{itemize}
         \vspace{0.75em}
-        \begin{equation*}
-            \hat{\pi}_{\beta/\lambda} (\, \cdot \, \vert x, y_{<t}) = \textup{softmax} \left[ \lambda h_\beta^{(t)} + (1 - \lambda) h_{\textup{SFT}}^{(t)} \right]
-        \end{equation*}
+        \begin{align*}
+            \hat{\pi}_{\beta/\lambda} (y_t \vert x, y_{<t}) &\coloneqq 
+            \frac{\pi_{\textup{SFT}} (y_t \vert x, y_{<t}) \left( \frac{\pi_\beta (y_t \vert x, y_{<t})}{\pi_{\textup{SFT}}(y_t \vert x, y_{<t})} \right)^\lambda}{\sum_{y_t} \pi_{\textup{SFT}} (y_t \vert x, y_{<t}) \left( \frac{\pi_\beta (y_t \vert x, y_{<t})}{\pi_{\textup{SFT}}(y_t \vert x, y_{<t})} \right)^\lambda} \\[0.75em] 
+            &\hphantom{=}{\color{white} \textup{softmax} \left[ \lambda h_\beta^{(t)} + (1 - \lambda) h_{\textup{SFT}}^{(t)} \right]}
+        \end{align*}
+    \begin{itemize}
+        \item[] {\color{white}where \(h^{(t)}_{\textup{SFT}}\) and \(h^{(t)}_{\beta}\) are the logits }
+        \begin{align*}
+            {\color{white}
+            \begin{cases}
+                \pi_{\textup{SFT}} (\, \cdot \, \vert x, y_{< t}) &= \textup{softmax} (h^{(t)}_{\textup{SFT}}) \\[0.75em]
+                \pi_{\beta} (\, \cdot \, \vert x, y_{< t}) &= \textup{softmax} (h^{(t)}_{\beta})
+            \end{cases}
+            }
+        \end{align*}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Results}
+    \begin{itemize}
+        \item Idea: change \(y, y^\prime \to\) current trajectory \(\{y_i\}_{i=1, \dotsc, t}\), fit \(\pi_\beta\)
+        \item Approximate realigned model at \(\beta / \lambda\)~\citep{liu2024decodingtimerealignmentlanguagemodels}:
+    \end{itemize}
+        \vspace{0.75em}
+        \begin{align*}
+            \hat{\pi}_{\beta/\lambda} (y_t \vert x, y_{<t}) &\coloneqq 
+            \frac{\pi_{\textup{SFT}} (y_t \vert x, y_{<t}) \left( \frac{\pi_\beta (y_t \vert x, y_{<t})}{\pi_{\textup{SFT}}(y_t \vert x, y_{<t})} \right)^\lambda}{\sum_{y_t} \pi_{\textup{SFT}} (y_t \vert x, y_{<t}) \left( \frac{\pi_\beta (y_t \vert x, y_{<t})}{\pi_{\textup{SFT}}(y_t \vert x, y_{<t})} \right)^\lambda} \\[0.75em] 
+            &= \textup{softmax} \left[ \lambda h_\beta^{(t)} + (1 - \lambda) h_{\textup{SFT}}^{(t)} \right]
+        \end{align*}
     \begin{itemize}
         \item[] where \(h^{(t)}_{\textup{SFT}}\) and \(h^{(t)}_{\beta}\) are the logits 
         \begin{align*}
@@ -555,12 +585,9 @@ I don't know what to make of this. Some people say that {\color{mygreen}keeping 
             \end{cases}
         \end{align*}
     \end{itemize}
-    % \begin{itemize}
-    %     \item \textbf{Code}: {\color{lightblue}\url{https://github.com/liutianlin0121/decoding-time-realignment}}
-    % \end{itemize}
 \end{frame}
 
-\begin{frame}{Results}
+\begin{frame}{Results for the NPOV task}
     \begin{figure}
         \centering
         \includegraphics[scale=0.55]{figures/part2/dera-hallucination-single-col.pdf}
