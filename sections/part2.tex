@@ -17,7 +17,7 @@
     \begin{columns}
         \begin{column}{0.5\linewidth}
             \begin{itemize}
-                \item Chatbots based on Transformers~\citep{Vaswani2017attention}
+                \item Chatbots based on Transformers~\footnotemark[5]
                 \item Hallucinations \(\approx\) false information, out of topic, rambling, toxic...
                 \item How to mitigate them?
             \end{itemize}
@@ -31,6 +31,7 @@
             \end{figure}
         \end{column}
     \end{columns}
+    \grayfootnotetext[5]{\citet{Vaswani2017attention}}
 \end{frame}
 
 \begin{frame}{Background on Language Models}
@@ -40,24 +41,7 @@
         \begin{equation*}
            \pi_\theta : x = (\textup{token}_1, \dotsc, \textup{token}_L) \mapsto \pi_\theta (\, \cdot \, \vert x) = \text{proba. over } \mathcal{V}
         \end{equation*}
-        \item[{\color{white}\ding{118}}] {\color{white}Autoregressive generation: \textit{prompt} \(x\) \(\to\) \textit{generate} \(y\)
-        \begin{align*}
-            y_1 &\sim \pi_\theta (\, \cdot \, \vert x) \\
-            y_2 &\sim \pi_\theta (\, \cdot \, \vert x, y_1) \\
-            &\vdots \\ 
-            y_t &\sim \pi_\theta (\, \cdot \, \vert x, y_{<t})
-        \end{align*}}
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Background on Language Models}
-    \addtocounter{framenumber}{-1}
-    \begin{itemize}
-        \item \textit{Vocabulary} \(\mathcal{V}\) = set of \textit{tokens} (``pieces of words'')
-        \item Language model
-        \begin{equation*}
-           \pi_\theta : x = (\textup{token}_1, \dotsc, \textup{token}_L) \mapsto \pi_\theta (\, \cdot \, \vert x) = \text{proba. over } \mathcal{V}
-        \end{equation*}
+        \vspace*{-2\baselineskip}\pause
         \item Autoregressive generation: \textit{prompt} \(x\) \(\to\) \textit{response} \(y\)
         \begin{align*}
             y_1 &\sim \pi_\theta (\, \cdot \, \vert x) \\
@@ -65,8 +49,33 @@
             &\vdots \\ 
             y_t &\sim \pi_\theta (\, \cdot \, \vert x, y_{<t})
         \end{align*}
+        % \item[{\color{white}\ding{118}}] {\color{white}Autoregressive generation: \textit{prompt} \(x\) \(\to\) \textit{generate} \(y\)
+        % \begin{align*}
+        %     y_1 &\sim \pi_\theta (\, \cdot \, \vert x) \\
+        %     y_2 &\sim \pi_\theta (\, \cdot \, \vert x, y_1) \\
+        %     &\vdots \\ 
+        %     y_t &\sim \pi_\theta (\, \cdot \, \vert x, y_{<t})
+        % \end{align*}}
     \end{itemize}
 \end{frame}
+
+% \begin{frame}{Background on Language Models}
+%     \addtocounter{framenumber}{-1}
+%     \begin{itemize}
+%         \item \textit{Vocabulary} \(\mathcal{V}\) = set of \textit{tokens} (``pieces of words'')
+%         \item Language model
+%         \begin{equation*}
+%            \pi_\theta : x = (\textup{token}_1, \dotsc, \textup{token}_L) \mapsto \pi_\theta (\, \cdot \, \vert x) = \text{proba. over } \mathcal{V}
+%         \end{equation*}
+%         \item Autoregressive generation: \textit{prompt} \(x\) \(\to\) \textit{response} \(y\)
+%         \begin{align*}
+%             y_1 &\sim \pi_\theta (\, \cdot \, \vert x) \\
+%             y_2 &\sim \pi_\theta (\, \cdot \, \vert x, y_1) \\
+%             &\vdots \\ 
+%             y_t &\sim \pi_\theta (\, \cdot \, \vert x, y_{<t})
+%         \end{align*}
+%     \end{itemize}
+% \end{frame}
 
 % \begin{frame}{Background on Language Models}
 
@@ -165,7 +174,7 @@
 % Top block: shown on all slides EXCEPT slide 3
 % ------------------------
 \only<1-2,4-7>{
-\begin{minipage}[t][10em][t]{\textwidth}
+\begin{minipage}[t][9.5em][t]{\textwidth}
 
     \only<1>{
         % \addtocounter{framenumber}{1}
@@ -194,7 +203,7 @@
 
     \only<4-5>{
         \addtocounter{framenumber}{1}
-        \textcolor{myorange}{\textit{Alignment}} to human preferences via Reinforcement Learning~\citep{christiano2023deepreinforcementlearninghuman}:\\[-0.25em]
+        \textcolor{myorange}{\textit{Alignment}} to human preferences via Reinforcement Learning:~\footnotemark[7]\\[-0.25em]
         \begin{enumerate}
             \item<4-5> Train a \textit{reward} model {\color{myorange}\(R\)} on \(\mathcal{D}_{\textup{RM}}\)
             \item<5> Update the \textit{writer} model \(\pi_{\textup{SFT}}\)
@@ -212,8 +221,8 @@
 
     \only<6>{
         \addtocounter{framenumber}{1}
-        \vspace{1em}
-        \textit{Parameter-efficient RL} \(\Rightarrow\) Low-Rank Adaptation (LoRA)~\citep{hu2021loralowrankadaptationlarge}:
+        % \vspace{1em}
+        \textit{Parameter-efficient RL} \(\Rightarrow\) Low-Rank Adaptation (LoRA):~\footnotemark[8]
         \begin{equation*}
             \theta = \theta_{\textup{SFT}} + \underbrace{A B}_{\text{low rank}}
         \end{equation*}
@@ -237,12 +246,13 @@
 \only<3>{
     \addtocounter{framenumber}{1}
     \frametitle{Retrieval Augmented Generation: 
-    NPOV Task~\citep{chang2024detectinghallucinationcoverageerrors}}
+    NPOV Task~\textsuperscript{6}}
 
     \begin{center}
-        \includegraphics[height=0.9\textheight]
+        \includegraphics[height=0.85\textheight]
             {figures/part2/npov_diagram.pdf}
     \end{center}
+    \grayfootnotetext[6]{\citet{chang2024detectinghallucinationcoverageerrors}}
 }
 
 % ------------------------
@@ -258,12 +268,15 @@
     }
     \only<4>{
         \includegraphics[width=0.7\textwidth,page=3]{figures/part2/alignment_diagram.pdf}
+        \grayfootnotetext[7]{\citet{christiano2023deepreinforcementlearninghuman}}
     }
     \only<5>{
         \includegraphics[width=0.7\textwidth,page=4]{figures/part2/alignment_diagram.pdf}
+        \grayfootnotetext[7]{\citet{christiano2023deepreinforcementlearninghuman}}
     }
     \only<6>{
         \includegraphics[width=0.7\textwidth,page=5]{figures/part2/alignment_diagram.pdf}
+        \grayfootnotetext[8]{\citet{hu2021loralowrankadaptationlarge}}
     }
     \only<7>{
         \includegraphics[width=0.7\textwidth,page=6]{figures/part2/alignment_diagram.pdf}
@@ -300,7 +313,7 @@
 \end{center}
 \end{frame}
 
-\begin{frame}{Creating Synthetic Hallucinations~\citep{chang2024detectinghallucinationcoverageerrors}}
+\begin{frame}{Creating Synthetic Hallucinations~\textsuperscript{9}}
 \textcolor{mygreen}{Pros:}
 \begin{enumerate}
     \item[{\color{mygreen}1.}] \textcolor{mygreen}{Studies show marijuana is a safe drug}
@@ -315,9 +328,10 @@ Cons:}
 \vspace{0.75em}
 Neutral answer:\\[0.75em]   
 ``Some people support marijuana legalization because {\color{mygreen}it would boost the economy} and {\color{mygreen}most studies demonstrate it is a safe drug}. Others oppose it because they see {\color{lightblue}marijuana as a gateway drug}, and its {\color{lightblue}legalization would bring many costs}.''
+\grayfootnotetext[9]{\citet{chang2024detectinghallucinationcoverageerrors}}
 \end{frame}
 
-\begin{frame}{Creating Synthetic Hallucinations~\citep{chang2024detectinghallucinationcoverageerrors}}
+\begin{frame}{Creating Synthetic Hallucinations~\textsuperscript{9}}
 \textcolor{mygreen}{Pros:}
 \begin{enumerate}
     \item[{\color{mygreen}1.}] \textcolor{mygreen}{Studies show marijuana is a safe drug}
@@ -332,10 +346,11 @@ Cons:}
 \vspace{0.75em}
 Neutral answer:\\[0.75em]   
 ``Some people support marijuana legalization because {\color{mygreen}it would boost the economy} and {\color{mygreen}most studies demonstrate it is a safe drug}. Others oppose it because they see \mycolorbox{red!70!white}{marijuana as a} \mycolorbox{red!70!white}{gateway drug}, and its {\color{lightblue}legalization would bring many costs}.''
+\grayfootnotetext[9]{\citet{chang2024detectinghallucinationcoverageerrors}}
 \end{frame}
 
-\begin{frame}{Creating Synthetic Hallucinations}
-    NPOV dataset~\citep{chang2024detectinghallucinationcoverageerrors}:
+\begin{frame}{Creating Synthetic Hallucinations~\textsuperscript{9}}
+    NPOV dataset:
 \begin{table}[h]
     \centering
     \begin{tabular}{lcccc}
@@ -350,6 +365,7 @@ Neutral answer:\\[0.75em]
     % \caption{Description of NPOV dataset. Summary rows (Topics and Samples) are separated by a dashed line.}
     % \label{tab:npov_data}
 \end{table}    
+\grayfootnotetext[9]{\citet{chang2024detectinghallucinationcoverageerrors}}
 \end{frame}
 
 % \begin{frame}{Results}
@@ -526,7 +542,7 @@ I don't know what to make of this. Some people say that {\color{mygreen}keeping 
 
 \begin{frame}{Closed-form solution}
     \begin{itemize}
-        \item Closed-form solution to alignment objective~\citep{ziegler2020finetuninglanguagemodelshuman}:
+        \item Closed-form solution to alignment objective:~\footnotemark[10]
         \begin{equation*}
             \pi_\beta (y \vert x) = \frac{\pi_{\textup{SFT}}(y \vert x) \, \exp \left(\frac{1}{\beta} R(x, y) \right)}{\sum_{y^\prime} \pi_{\textup{SFT}}(y^\prime \vert x) \, \exp \left(\frac{1}{\beta} R(x, y^\prime) \right)}
         \end{equation*}
@@ -538,13 +554,14 @@ I don't know what to make of this. Some people say that {\color{mygreen}keeping 
         \pause
         \item Sum over \(y^\prime\), and \(\pi_\beta\) on functional space \(\rightarrow\) intractable
     \end{itemize}
+\grayfootnotetext[10]{\citet{ziegler2020finetuninglanguagemodelshuman}}
 \end{frame}
 
 \begin{frame}{Results}
     \addtocounter{framenumber}{-1}
     \begin{itemize}
         \item Idea: change \(y, y^\prime \to\) current trajectory \(\{y_i\}_{i=1, \dotsc, t}\), fit \(\pi_\beta\)
-        \item Approximate realigned model at \(\beta / \lambda\)~\citep{liu2024decodingtimerealignmentlanguagemodels}:
+        \item Approximate realigned model at \(\beta / \lambda\):~\footnotemark[11]
     \end{itemize}
         \vspace{0.75em}
         \begin{align*}
@@ -563,12 +580,13 @@ I don't know what to make of this. Some people say that {\color{mygreen}keeping 
             }
         \end{align*}
     \end{itemize}
+\grayfootnotetext[11]{\citet{liu2024decodingtimerealignmentlanguagemodels}}
 \end{frame}
 
 \begin{frame}{Results}
     \begin{itemize}
         \item Idea: change \(y, y^\prime \to\) current trajectory \(\{y_i\}_{i=1, \dotsc, t}\), fit \(\pi_\beta\)
-        \item Approximate realigned model at \(\beta / \lambda\)~\citep{liu2024decodingtimerealignmentlanguagemodels}:
+        \item Approximate realigned model at \(\beta / \lambda\):~\footnotemark[11]
     \end{itemize}
         \vspace{0.75em}
         \begin{align*}
@@ -585,6 +603,7 @@ I don't know what to make of this. Some people say that {\color{mygreen}keeping 
             \end{cases}
         \end{align*}
     \end{itemize}
+\grayfootnotetext[11]{\citet{liu2024decodingtimerealignmentlanguagemodels}}
 \end{frame}
 
 \begin{frame}{Results for the NPOV task}

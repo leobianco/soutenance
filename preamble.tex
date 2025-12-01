@@ -44,7 +44,7 @@
 \usepackage{pifont}
 \usepackage{ragged2e}
 % 1. Load natbib
-\usepackage[square, numbers]{natbib}
+\usepackage[round]{natbib}
 % Redefine to use smaller font
 % \let\oldcitet\citet
 % \let\oldcitep\citep
@@ -71,6 +71,50 @@
 \setbeamertemplate{footline}{%
 	\raisebox{10pt}{\makebox[\paperwidth]{\hfill\makebox[7em]{\scriptsize \insertframenumber/\inserttotalframenumber}}}%
 }
+
+\setbeamercolor{footnote mark}{fg=gray}
+
+\makeatletter
+\newcommand{\titlefootnotemark}[2][\titlemarkcolor]{%
+  % #1 is the color (default: titlemarkcolor)
+  % #2 is the footnote number N (MANDATORY in this version)
+  
+  % Temporarily set the frametitle foreground color to the desired color
+  \setbeamercolor{frametitle}{fg=#1}%
+  
+  % Print the mark with the specified number
+  \footnotemark[#2]%
+  
+  % Reset the frametitle foreground color back to its original
+  \setbeamercolor{frametitle}{fg=normal text.fg}%
+}
+\makeatother
+
+\makeatletter
+\newcommand{\grayfootnotetext}{\@ifnextchar[{\@gr@yfootnotetext@opt}{\@gr@yfootnotetext@noopt}}
+
+% Case 1: Optional argument [N] is provided
+\newcommand{\@gr@yfootnotetext@opt}[2][\real@thefnmark]{%
+  \setbeamercolor{footnote mark}{fg=gray}% Set mark color to gray
+  \footnotetext[#1]{%
+    \vspace{-13pt} % Add space to match raised footline
+    \color{gray}#2%
+  }%
+  \setbeamercolor{footnote mark}{fg=beamer@temptext}% Reset mark color
+}
+
+% Case 2: No optional argument is provided
+\newcommand{\@gr@yfootnotetext@noopt}[1]{%
+  \setbeamercolor{footnote mark}{fg=gray}% Set mark color to gray
+  \footnotetext{%
+    \vspace{-13pt} % Add space to match raised footline
+    \color{gray}#1%
+  }%
+  \setbeamercolor{footnote mark}{fg=beamer@temptext}% Reset mark color
+}
+\makeatother
+\renewcommand\footnoterule{}
+
 \setbeamertemplate{itemize item}{{\color{lightblue}\ding{118}}}
 \setbeamercolor{enumerate item}{fg=lightblue} 
 

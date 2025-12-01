@@ -20,18 +20,22 @@
         \begin{column}{0.5\linewidth}
             \begin{itemize}
                 \item \textit{Adjacency matrix}: symmetric \(A \in {\{0, 1\}}^{n \times n}\)
-                \item[{\color{white}\ding{118}}] {\color{white}\textit{Community detection}~\citep{abbe2023communitydetectionstochasticblock}: group similar nodes, sensitive to \textit{outliers}}
+                \item[{\color{white}\ding{118}}] {\color{white}\textit{Community detection}: group similar nodes, sensitive to \textit{outliers}}
                 \item[{\color{white}\ding{118}}] {\color{white}\textit{Robust algorithm}: accurate results despite outliers}
             \end{itemize}
         \end{column}
         \begin{column}{0.5\linewidth}
+            \begin{minipage}[t][6cm][t]{\linewidth}
+            \centering
             \begin{figure}
                 \centering
                 \includegraphics[width=\textwidth]{figures/part1/jazz_graph.png}
-                \caption*{\scriptsize \color{gray} Jazz collaborations in New York, Chicago, and elsewhere~\citep{gleiser2003community}}
+                \caption*{\scriptsize \color{gray} Jazz collaborations in New York, Chicago, and elsewhere~\footnotemark[1]}
             \end{figure}
+        \end{minipage}
         \end{column}
     \end{columns}
+    \grayfootnotetext[1]{\citet{gleiser2003community}}
 \end{frame}
 
 \begin{frame}{Motivation}
@@ -40,18 +44,22 @@
         \begin{column}{0.5\linewidth}
             \begin{itemize}
                 \item \textit{Adjacency matrix}: symmetric \(A \in {\{0, 1\}}^{n \times n}\)
-                \item \textit{Community detection}~\citep{abbe2023communitydetectionstochasticblock}: group similar nodes, sensitive to \textit{outliers}
+                \item \textit{Community detection}:~\footnotemark[2] group similar nodes, sensitive to \textit{outliers}
                 \item[{\color{white}\ding{118}}] {\color{white}\textit{Robust algorithm}: accurate results despite outliers}
             \end{itemize}
         \end{column}
         \begin{column}{0.5\linewidth}
+            \begin{minipage}[t][6cm][t]{\linewidth}
+            \centering
             \begin{figure}
                 \centering
                 \includegraphics[width=\textwidth]{figures/part1/jazz_sc_graph.png}
                 \caption*{\scriptsize \color{gray}Clustering of the Jazz collaborations}
             \end{figure}
+        \end{minipage}
         \end{column}
     \end{columns}
+    \grayfootnotetext[2]{\citet{abbe2023communitydetectionstochasticblock}}
 \end{frame}
 
 \begin{frame}{Motivation}
@@ -60,18 +68,22 @@
         \begin{column}{0.5\linewidth}
             \begin{itemize}
                 \item \textit{Adjacency matrix}: symmetric \(A \in {\{0, 1\}}^{n \times n}\)
-                \item \textit{Community detection}~\citep{abbe2023communitydetectionstochasticblock}: group similar nodes, sensitive to \textit{outliers}
+                \item \textit{Community detection}:~\footnotemark[2] group similar nodes, sensitive to \textit{outliers}
                 \item \textit{Robust algorithm}: accurate results despite outliers
             \end{itemize}
         \end{column}
         \begin{column}{0.5\linewidth}
+            \begin{minipage}[t][6cm][t]{\linewidth}
+            \centering
             \begin{figure}
                 \centering
                 \includegraphics[width=\textwidth]{figures/part1/jazz_sc_graph.png}
                 \caption*{\scriptsize \color{gray}Clustering of the Jazz collaborations}
             \end{figure}
+        \end{minipage}
         \end{column}
     \end{columns}
+    \grayfootnotetext[2]{\citet{abbe2023communitydetectionstochasticblock}}
 \end{frame}
 
 % --- METHODOLOGY ---
@@ -98,15 +110,58 @@
 % \end{frame}
 
 
-\begin{frame}{The Stochastic Block Model~\citep{HOLLAND1983109}}
+% \begin{frame}{The Stochastic Block Model~\textsuperscript{3}}
+%     \begin{columns}
+%         \column{0.5\linewidth}
+%             \(Z_i \to \text{community of node } i\) \\[1em]
+%             \(K \; \to \text{nb. of communities}\) \\[1em]
+%             \(\textcolor{black}{\pi_{k}} \to \text{size of community } k\) \\[1em]
+%             \(\textcolor{myorange}{\Gamma_{kl}} \to \text{connectivity } k, l\) \\[1.5em]
+%             {\color{white}
+%             \((Z, A) \sim \textup{SBM}_K (\pi, \Gamma)\) 
+%             \begin{equation*}
+%                 \begin{cases}
+%                     \mathbb{P}(Z_i = k) = \pi_k \\
+%                     \mathbb{P}(A_{i j} = 1 \vert Z_i = k, Z_j = l) = \Gamma_{kl}
+%                 \end{cases}
+%             \end{equation*}
+%             }
+%         \column{0.5\linewidth}
+%             \includegraphics[width=\linewidth]{figures/part1/sbm.png}
+%     \end{columns}
+%     \grayfootnotetext[3]{\citet{HOLLAND1983109}}
+% \end{frame}
+
+% \begin{frame}{The Stochastic Block Model~\textsuperscript{3}}
+%     \addtocounter{framenumber}{-1}
+%     \begin{columns}
+%         \column{0.5\linewidth}
+%             \(Z_i \to \text{community of node } i\) \\[1em]
+%             \(K \; \to \text{nb. of communities}\) \\[1em]
+%             \(\textcolor{black}{\pi_{k}} \to \text{size of community } k\) \\[1em]
+%             \(\textcolor{myorange}{\Gamma_{kl}} \to \text{connectivity } k, l\) \\[1.5em]
+%             \((Z, A) \sim \textup{SBM}_{K} (\textcolor{black}{\pi}, \textcolor{myorange}{\Gamma})\) 
+%             \begin{equation*}
+%                 \begin{cases}
+%                     \mathbb{P}(Z_i = k) = \textcolor{black}{\pi_k} \\
+%                     \mathbb{P}(A_{i j} = 1 \vert Z_i = k, Z_j = l) = \textcolor{myorange}{\Gamma_{kl}}
+%                 \end{cases}
+%             \end{equation*}
+%         \column{0.5\linewidth}
+%             \includegraphics[width=\linewidth]{figures/part1/sbm.png}
+%     \end{columns}
+%     \grayfootnotetext[3]{\citet{HOLLAND1983109}}
+% \end{frame}
+
+\begin{frame}{The Stochastic Block Model~\textsuperscript{3}}
     \begin{columns}
         \column{0.5\linewidth}
-            \(Z_i \to \text{community of node } i\) \\[1em]
+         \uncover<1->{\(Z_i \to \text{community of node } i\) \\[1em]
             \(K \; \to \text{nb. of communities}\) \\[1em]
             \(\textcolor{black}{\pi_{k}} \to \text{size of community } k\) \\[1em]
             \(\textcolor{myorange}{\Gamma_{kl}} \to \text{connectivity } k, l\) \\[1.5em]
-            {\color{white}
-            \((Z, A) \sim \textup{SBM}_K (\pi, \Gamma)\) 
+            }
+           \uncover<2->{\((Z, A) \sim \textup{SBM}_K (\pi, \Gamma)\) 
             \begin{equation*}
                 \begin{cases}
                     \mathbb{P}(Z_i = k) = \pi_k \\
@@ -115,31 +170,15 @@
             \end{equation*}
             }
         \column{0.5\linewidth}
+            \begin{minipage}[t][6cm][t]{\linewidth}
+            \centering
             \includegraphics[width=\linewidth]{figures/part1/sbm.png}
+            \end{minipage}
     \end{columns}
+    \grayfootnotetext[3]{\citet{HOLLAND1983109}}
 \end{frame}
 
-\begin{frame}{The Stochastic Block Model~\citep{HOLLAND1983109}}
-    \addtocounter{framenumber}{-1}
-    \begin{columns}
-        \column{0.5\linewidth}
-            \(Z_i \to \text{community of node } i\) \\[1em]
-            \(K \; \to \text{nb. of communities}\) \\[1em]
-            \(\textcolor{black}{\pi_{k}} \to \text{size of community } k\) \\[1em]
-            \(\textcolor{myorange}{\Gamma_{kl}} \to \text{connectivity } k, l\) \\[1.5em]
-            \((Z, A) \sim \textup{SBM}_{K} (\textcolor{black}{\pi}, \textcolor{myorange}{\Gamma})\) 
-            \begin{equation*}
-                \begin{cases}
-                    \mathbb{P}(Z_i = k) = \textcolor{black}{\pi_k} \\
-                    \mathbb{P}(A_{i j} = 1 \vert Z_i = k, Z_j = l) = \textcolor{myorange}{\Gamma_{kl}}
-                \end{cases}
-            \end{equation*}
-        \column{0.5\linewidth}
-            \includegraphics[width=\linewidth]{figures/part1/sbm.png}
-    \end{columns}
-\end{frame}
-
-\begin{frame}{The Corrupted Stochastic Block Model~\citep{liu2022minimax}}
+\begin{frame}{The Corrupted Stochastic Block Model~\textsuperscript{4}}
     \begin{columns}
         \column{0.5\linewidth}
             \textit{Adversary} creates outliers:
@@ -165,8 +204,12 @@
             %     \end{cases}
             % \end{equation*}
         \column{0.5\linewidth}
+            \begin{minipage}[t][6cm][t]{\linewidth}
+            \centering
             \includegraphics[width=\linewidth]{figures/part1/sbm_outliers.png}
+            \end{minipage}
     \end{columns}
+    \grayfootnotetext[4]{\citet{liu2022minimax}}
 \end{frame}
 % --- END OF METHODOLOGY ---
 
@@ -196,7 +239,7 @@
             \Rightarrow \quad \hat{\Gamma} = \left(\sum_{i \in S_k j \in S_l} A_{i j}\right) / \vert S_k \vert \vert S_l \vert \quad \textup{is a good estimator}
         \end{equation*}
         \pause
-        \item \textbf{Contribution}: extend bound in~\citet{pmlr-v178-acharya22a} to \(K > 1\)
+        \item \textbf{Contribution \#1}: extend error bound in~\citet{pmlr-v178-acharya22a} to \(K > 1\)
     \end{itemize}
     \begin{tcolorbox}[colback=yellow!45!white,
                     colframe=yellow!45!white]
@@ -218,9 +261,9 @@
     \addtocounter{framenumber}{-1}
     \begin{itemize}
         \item Idea: find subgraph \(S\) excluding worst outliers
-        \item \textbf{Contribution}: extend bound in~\citet{pmlr-v178-acharya22a} to \(K > 1\)
-        \item \textbf{Contribution} (\textsc{SubSearch},~\citep{bianco2025subsearchrobustestimationoutlier}): finding \(S\) by optimizing \(c(S) \coloneqq \lVert A_S - \hat{Q}(S) \rVert_{\textup{op}}\) via Simulated Annealing
-        \item \textbf{Contribution}: {\color{myblue}\url{github.com/leobianco/robust_estim_sbm}}
+        \item \textbf{Contribution \#1}: extend error bound in~\citet{pmlr-v178-acharya22a} to \(K > 1\)
+        \item \textbf{Contribution \#2}: \textsc{SubSearch} algorithm, finding \(S\) by optimizing \(c(S) \coloneqq \lVert A_S - \hat{Q}(S) \rVert_{\textup{op}}\) via Simulated Annealing
+        \item \textbf{Code}: {\color{myblue}\url{github.com/leobianco/robust_estim_sbm}}
     \end{itemize}
 \end{frame}
 
