@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1764682733.99307 "main.aux" "main.bbl" "main" 1764683421.69831 0
+["bibtex main"] 1764690669.32748 "main.aux" "main.bbl" "main" 1764691271.4846 0
   "./references.bib" 1764334246 6518 334d19eb7171d6dbbaee3d1f6c9ad17f ""
   "c:/texlive/2025/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1750424295 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "main.aux" 1764683419 15559 90b092228755a59fa86cf1cc16e0b341 "pdflatex"
+  "main.aux" 1764691269 15386 093992803df68509c1333cf55fc220f0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1764683409.57017 "c:/Users/leona/base/01_Work/soutenance/main.tex" "main.pdf" "main" 1764683421.69916 0
+["pdflatex"] 1764691256.8445 "c:/Users/leona/base/01_Work/soutenance/main.tex" "main.pdf" "main" 1764691271.4854 0
   "c:/Users/leona/base/01_Work/soutenance/main.tex" 1764683408 3509 208201b862dd3d541b5aa41884a79d97 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc" 1750422832 2920 d63721872b8c77041b88e51b8f7c291d ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc" 1750424329 3877 2ca811886181a05a861d20a35de75e06 ""
@@ -332,23 +332,22 @@
   "figures/part2/autorater_prompt.PNG" 1764333400 113740 91d778f1d2c94467256f1f939b505a66 ""
   "figures/part2/dera-hallucination-single-col.pdf" 1752846259 263574 338f4f564e00b5868ce4dfb76cb154ef ""
   "figures/part2/length_reward_result_no_sax.pdf" 1752846258 579425 3df91105992ef3c2133d90127a1a36e1 ""
-  "figures/part2/my_dera.pdf" 1764668529 33963 dd5c65c215909d9e49781461802bdb57 ""
   "figures/part2/npov_diagram.pdf" 1757409929 133236 55a4b7bd566fc5a46e9fe081e21bb854 ""
   "figures/part2/npov_perl_organic_reward.png" 1763473687 186796 10a4a7d9f1c97f4fccefb713e0575737 ""
   "figures/part2/npov_perl_struct_reward.png" 1763473785 190118 b420d1d3757335ec85069b81fc9da02a ""
   "figures/part2/npov_rm_organic.png" 1763484136 93817 b1f52a0046d1912f42cc78df6a349369 ""
   "figures/part2/npov_rm_struct.png" 1763473482 200571 078ff2f44b4cb753de2d24ce50872753 ""
-  "main.aux" 1764683419 15559 90b092228755a59fa86cf1cc16e0b341 "pdflatex"
-  "main.bbl" 1764682734 4912 53dbdad1d07c37bf3ae2445351892963 "bibtex main"
-  "main.nav" 1764683419 7536 d378a6ca3aa4106b9a16759023853774 "pdflatex"
-  "main.out" 1764683419 1648 f886fb0aec91879b5c9020c5c53125cc "pdflatex"
+  "main.aux" 1764691269 15386 093992803df68509c1333cf55fc220f0 "pdflatex"
+  "main.bbl" 1764690670 4912 53dbdad1d07c37bf3ae2445351892963 "bibtex main"
+  "main.nav" 1764691269 7399 31740cb1d98c7f2b6fed9c18e38f5a56 "pdflatex"
+  "main.out" 1764691269 1648 f886fb0aec91879b5c9020c5c53125cc "pdflatex"
   "main.tex" 1764683408 3509 208201b862dd3d541b5aa41884a79d97 ""
-  "main.toc" 1764683419 428 a7bfd34045d48cdb1cf45e351064ff62 "pdflatex"
+  "main.toc" 1764691269 428 a7bfd34045d48cdb1cf45e351064ff62 "pdflatex"
   "preamble.tex" 1764680900 5117 3a2bba144c4463b506c6356b688dd58c ""
   "sections/appendix.tex" 1764327875 2560 c230f3e51c0509d72176c30a6721e542 ""
   "sections/intro.tex" 1764242573 1157 90d1bbee29e4d6b050dc7bdc8d8ffd8a ""
   "sections/part1.tex" 1764670081 18295 e5b90e174a883566491446a35fa6fc8e ""
-  "sections/part2.tex" 1764680064 34603 8600ba846744eb345f91a213fc72751a ""
+  "sections/part2.tex" 1764691255 34958 2fb65849e3cdeaae263263f718eab219 ""
   (generated)
   "main.aux"
   "main.log"

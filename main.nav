@@ -104,25 +104,23 @@
 \headcommand {\beamer@framepages {60}{60}}
 \headcommand {\slideentry {2}{2}{9}{61/61}{Decoding-time Realignment of Language Models}{0}}
 \headcommand {\beamer@framepages {61}{61}}
-\headcommand {\slideentry {2}{2}{10}{62/62}{Decoding-time Realignment of Language Models}{0}}
-\headcommand {\beamer@framepages {62}{62}}
-\headcommand {\gdef \insertmainframenumber {34}}
+\headcommand {\gdef \insertmainframenumber {33}}
 \headcommand {\partentry {\translate {Appendix}}{1}}
-\headcommand {\beamer@partpages {1}{62}}
-\headcommand {\beamer@sectionpages {29}{62}}
-\headcommand {\beamer@subsectionpages {49}{62}}
-\headcommand {\beamer@appendixpages {63}}
-\headcommand {\beamer@sectionpages {63}{62}}
-\headcommand {\beamer@subsectionpages {63}{62}}
-\headcommand {\sectionentry {3}{\translate {References}}{63}{\translate {References}}{1}}
-\headcommand {\slideentry {3}{0}{0}{63/63}{}{1}}
-\headcommand {\beamer@framepages {63}{63}}
-\headcommand {\slideentry {3}{0}{0}{63/64}{}{1}}
-\headcommand {\beamer@framepages {63}{64}}
-\headcommand {\beamer@partpages {1}{64}}
-\headcommand {\beamer@subsectionpages {49}{64}}
-\headcommand {\beamer@sectionpages {29}{64}}
-\headcommand {\beamer@documentpages {64}}
+\headcommand {\beamer@partpages {1}{61}}
+\headcommand {\beamer@sectionpages {29}{61}}
+\headcommand {\beamer@subsectionpages {49}{61}}
+\headcommand {\beamer@appendixpages {62}}
+\headcommand {\beamer@sectionpages {62}{61}}
+\headcommand {\beamer@subsectionpages {62}{61}}
+\headcommand {\sectionentry {3}{\translate {References}}{62}{\translate {References}}{1}}
+\headcommand {\slideentry {3}{0}{0}{62/62}{}{1}}
+\headcommand {\beamer@framepages {62}{62}}
+\headcommand {\slideentry {3}{0}{0}{62/63}{}{1}}
+\headcommand {\beamer@framepages {62}{63}}
+\headcommand {\beamer@partpages {1}{63}}
+\headcommand {\beamer@subsectionpages {49}{63}}
+\headcommand {\beamer@sectionpages {29}{63}}
+\headcommand {\beamer@documentpages {63}}
 \headcommand {\gdef \inserttotalframenumber {0}}
-\headcommand {\gdef \inserttotalframenumber {34}}
+\headcommand {\gdef \inserttotalframenumber {33}}
 \headcommand {\gdef \appendixtotalframenumber {0}}
