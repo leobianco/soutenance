@@ -25,7 +25,7 @@
             \end{itemize}
         \end{column}
         \begin{column}{0.5\linewidth}
-            \begin{minipage}[t][6cm][t]{\linewidth}
+            \begin{minipage}[t][4cm][t]{\linewidth}
             \centering
             \begin{figure}
                 \centering
@@ -49,7 +49,7 @@
             \end{itemize}
         \end{column}
         \begin{column}{0.5\linewidth}
-            \begin{minipage}[t][6cm][t]{\linewidth}
+            \begin{minipage}[t][4cm][t]{\linewidth}
             \centering
             \begin{figure}
                 \centering
@@ -73,7 +73,7 @@
             \end{itemize}
         \end{column}
         \begin{column}{0.5\linewidth}
-            \begin{minipage}[t][6cm][t]{\linewidth}
+            \begin{minipage}[t][4cm][t]{\linewidth}
             \centering
             \begin{figure}
                 \centering
@@ -170,9 +170,11 @@
             \end{equation*}
             }
         \column{0.5\linewidth}
-            \begin{minipage}[t][6cm][t]{\linewidth}
+            \begin{minipage}[t]{\linewidth}
             \centering
+            \vfill
             \includegraphics[width=\linewidth]{figures/part1/sbm.png}
+            \vfill
             \end{minipage}
     \end{columns}
     \grayfootnotetext[3]{\citet{HOLLAND1983109}}
@@ -188,25 +190,12 @@
                 \item Adversary arbitrarily changes edges of \(\gamma n\) nodes
                 \item Corrupted \(A\) is observed
             \end{enumerate}
-            % \begin{equation*}
-            %      \; \xrightarrow[\gamma n {\scriptsize \text{ nodes}}]{{\scriptsize \text{Corruption}}} \; A
-            % \end{equation*}
-            % \\[1em]
-            % \hspace{1em} \(Z_i \to \text{community of node } i\) \\[1em]
-            % \hspace{1em} \(K \; \to \text{nb. of communities}\) \\[1em]
-            % \hspace{1em} \(\textcolor{black}{\pi_{k}} \to \text{size of community } k\) \\[1em]
-            % \hspace{1em} \(\textcolor{myorange}{\Gamma_{kl}} \to \text{connectivity } k, l\) \\[1.5em]
-            % \((Z, A) \sim \textup{SBM}_{K} (\textcolor{black}{\pi}, \textcolor{myorange}{\Gamma})\) 
-            % \begin{equation*}
-            %     \begin{cases}
-            %         \mathbb{P}(Z_i = k) = \textcolor{black}{\pi_k} \\
-            %         \mathbb{P}(A_{i j} = 1 \vert Z_i = k, Z_j = l) = \textcolor{myorange}{\Gamma_{kl}}
-            %     \end{cases}
-            % \end{equation*}
         \column{0.5\linewidth}
-            \begin{minipage}[t][6cm][t]{\linewidth}
+            \begin{minipage}[t]{\linewidth}
             \centering
+            \vfill
             \includegraphics[width=\linewidth]{figures/part1/sbm_outliers.png}
+            \vfill
             \end{minipage}
     \end{columns}
     \grayfootnotetext[4]{\citet{liu2022minimax}}
@@ -427,7 +416,7 @@ to minimize \(c(S) = \|A_S - \hat{Q}(S)\|_{\textup{op}}\)
     \end{figure}
 \end{frame}
 
-\begin{frame}{Discussion}
+\begin{frame}{Discussion for Robust Community Detection}
     \begin{itemize}
         \item \textbf{Main takeaway}: ``exploring'' the space of subgraphs \(\Rightarrow\) find subgraphs avoiding outliers
         \item Perspective \# 1: can we rigorously prove robustness?
