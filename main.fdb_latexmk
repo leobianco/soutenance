@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1764690669.32748 "main.aux" "main.bbl" "main" 1764691271.4846 0
+["bibtex main"] 1764693102.90095 "main.aux" "main.bbl" "main" 1764693719.34817 0
   "./references.bib" 1764334246 6518 334d19eb7171d6dbbaee3d1f6c9ad17f ""
   "c:/texlive/2025/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1750424295 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "main.aux" 1764691269 15386 093992803df68509c1333cf55fc220f0 "pdflatex"
+  "main.aux" 1764693717 16799 820e07f5e46baf2ba1d7c72d5ba34ea8 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1764691256.8445 "c:/Users/leona/base/01_Work/soutenance/main.tex" "main.pdf" "main" 1764691271.4854 0
+["pdflatex"] 1764693703.98527 "c:/Users/leona/base/01_Work/soutenance/main.tex" "main.pdf" "main" 1764693719.34902 0
   "c:/Users/leona/base/01_Work/soutenance/main.tex" 1764683408 3509 208201b862dd3d541b5aa41884a79d97 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc" 1750422832 2920 d63721872b8c77041b88e51b8f7c291d ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc" 1750424329 3877 2ca811886181a05a861d20a35de75e06 ""
@@ -310,6 +310,14 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1750426721 5569470 f263a82cf6bb394f5bc87b63f38b78df ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1750427162 3599593 ef0b179f753382414e831a8941884f21 ""
   "c:/texlive/2025/texmf.cnf" 1750426683 713 e69b156964470283e0530f5060668171 ""
+  "figures/appendix/acharya_algo.png" 1764691707 104813 52b5ecac6124ed484d9116d30563418d ""
+  "figures/appendix/acharya_bound.png" 1764691677 84531 0d2ad7577712428df284d50ea619c461 ""
+  "figures/appendix/delucion_dataset.png" 1764692122 49701 40a4066728a8f321daf25bcc71822606 ""
+  "figures/appendix/delucion_graph_rm.png" 1764692270 167962 45bac142337c107cc44537f48aa82c64 ""
+  "figures/appendix/delucion_graph_synthetic.png" 1764692323 160133 c14cab0f8314e317524f1ef38274bda8 ""
+  "figures/appendix/delucion_results.png" 1764692182 19813 218d6c2f4d7cc794254c21ffb0f281e5 ""
+  "figures/appendix/kl_term.png" 1764691869 132144 960d319f0e68a697d06b9690a3135522 ""
+  "figures/appendix/proof_theorem.png" 1764692011 307612 06c51bae57741dc9b0286a732dafa19d ""
   "figures/intro/logo_deepmind.png" 1764177878 12615 1da154294b090a5ecc464b681d6a7270 ""
   "figures/intro/logo_upsaclay.png" 1764172033 94254 554646c0aec37c3354f286b725d6ccf8 ""
   "figures/intro/thesis_overview.pdf" 1764179229 232705 dc16071b8c015a92d0503c678756ba1e ""
@@ -337,14 +345,14 @@
   "figures/part2/npov_perl_struct_reward.png" 1763473785 190118 b420d1d3757335ec85069b81fc9da02a ""
   "figures/part2/npov_rm_organic.png" 1763484136 93817 b1f52a0046d1912f42cc78df6a349369 ""
   "figures/part2/npov_rm_struct.png" 1763473482 200571 078ff2f44b4cb753de2d24ce50872753 ""
-  "main.aux" 1764691269 15386 093992803df68509c1333cf55fc220f0 "pdflatex"
-  "main.bbl" 1764690670 4912 53dbdad1d07c37bf3ae2445351892963 "bibtex main"
-  "main.nav" 1764691269 7399 31740cb1d98c7f2b6fed9c18e38f5a56 "pdflatex"
-  "main.out" 1764691269 1648 f886fb0aec91879b5c9020c5c53125cc "pdflatex"
+  "main.aux" 1764693717 16799 820e07f5e46baf2ba1d7c72d5ba34ea8 "pdflatex"
+  "main.bbl" 1764693103 4912 53dbdad1d07c37bf3ae2445351892963 "bibtex main"
+  "main.nav" 1764693717 8415 2263f09e76406fdc5fba59beec4a7c03 "pdflatex"
+  "main.out" 1764693717 1648 f886fb0aec91879b5c9020c5c53125cc "pdflatex"
   "main.tex" 1764683408 3509 208201b862dd3d541b5aa41884a79d97 ""
-  "main.toc" 1764691269 428 a7bfd34045d48cdb1cf45e351064ff62 "pdflatex"
+  "main.toc" 1764693717 428 a7bfd34045d48cdb1cf45e351064ff62 "pdflatex"
   "preamble.tex" 1764680900 5117 3a2bba144c4463b506c6356b688dd58c ""
-  "sections/appendix.tex" 1764327875 2560 c230f3e51c0509d72176c30a6721e542 ""
+  "sections/appendix.tex" 1764693702 4793 36656933729dc577f230ebebd48d13c3 ""
   "sections/intro.tex" 1764242573 1157 90d1bbee29e4d6b050dc7bdc8d8ffd8a ""
   "sections/part1.tex" 1764670081 18295 e5b90e174a883566491446a35fa6fc8e ""
   "sections/part2.tex" 1764691255 34958 2fb65849e3cdeaae263263f718eab219 ""

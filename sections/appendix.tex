@@ -1,38 +1,121 @@
-% \begin{frame}[allowframebreaks, noframenumbering]
+\begin{frame}{Corruption model for graph simulations}
+\begin{enumerate}
+    \item Sample an uncorrupted graph from an SBM and \(m = \lfloor \gamma n \rfloor\) nodes to be the outliers.
+    \item For each outlier \(i = 1, \dotsc, m\) and each \(k = 1, \dotsc, K\), draw a new connection probability between that node and nodes in community \(k\) using a Beta distribution, \textit{i.e.}, \(\tilde{\Gamma}_{ik} \sim \mathcal{B}(\alpha, \beta)\).
+\end{enumerate}
 
-%     \frametitle{Numerical Results on Synthetic Data (Multiple Runs)}
-%     \begin{figure}
-%         \centering
-%         \includegraphics[width=\textwidth]{figures/part1/dependence_on_n.pdf}
-%         % \caption{Estimation error of different methods as the amount of perturbation increases.}
-%         \label{fig:dependence_on_n}
-%     \end{figure}
-% \end{frame}
+Here, \(\alpha\) and \(\beta\) are chosen so that \(\mathbb{E}[\tilde{\Gamma}_{ik}] = \Gamma_{z(i) k}\) and that the variance is the greatest possible (with the constraint that \(\tilde{\Gamma}_{ik} \in [0, 1]\)).
+\end{frame}
+
+\begin{frame}{Acharya bound}
+    \begin{figure}
+        \centering   
+        \includegraphics[width=0.95\linewidth]{figures/appendix/acharya_bound.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Acharya algorithm}
+    \begin{figure}
+        \centering   
+        \includegraphics[width=0.95\linewidth]{figures/appendix/acharya_algo.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Proof of the theorem}
+    \begin{figure}
+        \centering   
+        \includegraphics[height=\textheight]{figures/appendix/proof_theorem.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Definition of KL term}
+    \begin{figure}
+        \centering   
+        \includegraphics[width=0.95\linewidth]{figures/appendix/kl_term.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{DelucionQA dataset}
+    \begin{figure}
+        \centering   
+        \includegraphics[width=0.95\linewidth]{figures/appendix/delucion_dataset.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{DelucionQA results}
+    \begin{figure}
+        \centering   
+        \includegraphics[width=0.95\linewidth]{figures/appendix/delucion_results.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{DelucionQA RM organic}
+    \begin{figure}
+        \centering   
+        \includegraphics[width=0.95\linewidth]{figures/appendix/delucion_graph_rm.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{DelucionQA RM synthetic}
+    \begin{figure}
+        \centering   
+        \includegraphics[width=0.95\linewidth]{figures/appendix/delucion_graph_synthetic.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Example of Hallucination Removed}
+    \setlength{\columnsep}{1.5em} 
+    \scriptsize
+
+\textbf{User query:} What should I pay attention to about opening the hood?
+
+\vspace{0.5em}
+
+\begin{columns}[T, totalwidth=\textwidth]
+% ------------------- LEFT COLUMN -------------------
+\begin{column}{0.48\textwidth}
+\textbf{Manual:} Closing The Hood To close the hood, remove the support rod from the radiator crossmember, and install into the clip on the hood. Lower the hood slowly. Secure both of the hood latches. WARNING: Be sure the hood is fully latched before driving your vehicle. If the hood is not fully latched, it could open when the vehicle is in motion and block your vision. Failure to follow this warning could result in serious injury or death.
+\end{column}
+
+% ------------------- RIGHT COLUMN -------------------
+\begin{column}{0.48\textwidth}
+\textbf{Answer (SFT):}
+
+{\scriptsize
+\justifying{{\color{red}When opening the hood, you should pay attention to the support rod and the hood latches. You should remove the support rod from the radiator crossmember and install it into the clip on the hood. Then, lower the hood slowly and secure both of the hood latches.} It is important to ensure that the hood is fully latched before driving your vehicle to avoid any accidents or injuries.}
+}
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
 
 
-% \begin{frame}{Example of hallucination removed \#1}
-% User query: Should Parents or Other Adults Be Able to Ban Books from Schools and Libraries? 
+\begin{frame}{Example of Hallucination Removed}
+    \setlength{\columnsep}{1.5em} 
+    \scriptsize
 
-% pro arguments provided:
+\textbf{User query:} What should I pay attention to about opening the hood?
 
-% pro: Keeping books with inappropriate content out of libraries protects kids but doesn’t stop people from reading those books or prevent authors from writing them.
+\vspace{0.5em}
 
-% pro: Parents have the right to decide what material their children are exposed to and when.
+\begin{columns}[T, totalwidth=\textwidth]
+% ------------------- LEFT COLUMN -------------------
+\begin{column}{0.48\textwidth}
+\textbf{Manual:} Closing The Hood To close the hood, remove the support rod from the radiator crossmember, and install into the clip on the hood. Lower the hood slowly. Secure both of the hood latches. WARNING: Be sure the hood is fully latched before driving your vehicle. If the hood is not fully latched, it could open when the vehicle is in motion and block your vision. Failure to follow this warning could result in serious injury or death.
+\end{column}
 
-% con arguments provided: 
+% ------------------- RIGHT COLUMN -------------------
+\begin{column}{0.48\textwidth}
+\textbf{Answer (PE-RL):}
 
-% con: People can better understand the world and their position in it by reading a number of works that are regularly criticized. 
+{\scriptsize
+\justifying{The vehicle's hood should be fully latched before driving to avoid it opening while the vehicle is in motion and blocking the driver's vision.}
+}
 
-% con: Books are a portal to different life experiences and reading encourages empathy and social-emotional development. 
+\end{column}
 
-% Neutral point-of-view answer to user query, rewriting provided arguments in natural language:
+\end{columns}
 
-% SFT
-
-% This is a very controversial topic. Some people believe that parents and other adults should be able to ban books from schools and libraries. They say that this would protect children from inappropriate content. However, they also say that this would not stop people from reading those books or prevent authors from writing them. On the other hand, \textbf{others say that banning books is a way to protect children from the world} and that it is a way to encourage empathy and social-emotional development. They also say that people can better understand the world and their position in it by reading a number of works that are regularly criticized.
-
-% PE-RL
-
-% I don't know what to make of this. Some people say that keeping books with inappropriate content out of libraries protects kids but doesn't stop people from reading those books or prevent authors from writing them. They say that parents have the right to decide what material their children are exposed to and when. Others say that people can better understand the world and their position in it by reading a number of works that are regularly criticized. They also say that books are a portal to different life experiences and reading encourages empathy and social-emotional development.
-    
-% \end{frame}
+\end{frame}
