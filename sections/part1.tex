@@ -225,16 +225,16 @@
     \begin{itemize}
         \item Idea: find subgraph \(S=S_1 \cup \dots \cup S_K\) excluding outliers
         \begin{equation*}
-            \Rightarrow \quad \hat{\Gamma} = \left(\sum_{i \in S_k j \in S_l} A_{i j}\right) / \vert S_k \vert \vert S_l \vert \quad \textup{is a good estimator}
+            \Rightarrow \quad \hat{\Gamma}_{k l} = \left(\sum_{i \in S_k j \in S_l} A_{i j}\right) / \vert S_k \vert \vert S_l \vert \quad \textup{is a good estimator}
         \end{equation*}
         \pause
         \item \textbf{Contribution \#1}: extend error bound in~\citet{pmlr-v178-acharya22a} to \(K > 1\)
     \end{itemize}
     \begin{tcolorbox}[colback=yellow!45!white,
                     colframe=yellow!45!white]
-        \textbf{Theorem~\citep{bianco2025subsearchrobustestimationoutlier}.} Let \(S\) be a subgraph clustered into \(S_1, \dotsc, S_K\), \(\Omega_k\) the nodes in community \(k\), \(\mathcal{I}\) the inliers.
+        \textbf{Theorem~\citep{bianco2025subsearchrobustestimationoutlier}.} Let \(S = S_1 \cup \dots \cup S_K\) be a subgraph, \(\Omega_k\) the nodes in community \(k\), \(\mathcal{I}\) the inliers.
         Let
-        \(\hat{\Gamma} = \left(\sum_{i \in S_k j \in S_l} A_{i j}\right) / \vert S_k \vert \vert S_l \vert\) and \(\hat{Q}(S)_{i j} = \hat{\Gamma}_{S(i) S(j)}\).
+        \(\hat{\Gamma}_{k l} = \left(\sum_{i \in S_k j \in S_l} A_{i j}\right) / \vert S_k \vert \vert S_l \vert\) and \(\hat{Q}(S)_{i j} = \hat{\Gamma}_{S(i) S(j)}\).
         Then,
         \begin{align*}
             \lVert \Gamma - \hat{\Gamma} \rVert_1 &\lesssim \frac{\lVert A_S - \hat{Q}(S) \rVert_{\textup{op}}}{\min_{1 \leq k \leq K} \lvert \Omega_k \cap S_k \cap \mathcal{I} \rvert}
