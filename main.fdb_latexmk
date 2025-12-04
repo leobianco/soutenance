@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1764693102.90095 "main.aux" "main.bbl" "main" 1764782752.58038 0
+["bibtex main"] 1764830974.17098 "main.aux" "main.bbl" "main" 1764831050.00154 0
   "./references.bib" 1764334246 6518 334d19eb7171d6dbbaee3d1f6c9ad17f ""
   "c:/texlive/2025/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1750424295 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "main.aux" 1764782750 16799 820e07f5e46baf2ba1d7c72d5ba34ea8 "pdflatex"
+  "main.aux" 1764831048 15349 1f5d531b37b1883706d1220b9aa4e2fc "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1764782739.17533 "c:/Users/leona/base/01_Work/soutenance/main.tex" "main.pdf" "main" 1764782752.58119 0
+["pdflatex"] 1764831037.75748 "c:/Users/leona/base/01_Work/soutenance/main.tex" "main.pdf" "main" 1764831050.00237 0
   "c:/Users/leona/base/01_Work/soutenance/main.tex" 1764683408 3509 208201b862dd3d541b5aa41884a79d97 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc" 1750422832 2920 d63721872b8c77041b88e51b8f7c291d ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc" 1750424329 3877 2ca811886181a05a861d20a35de75e06 ""
@@ -322,7 +322,6 @@
   "figures/intro/logo_upsaclay.png" 1764172033 94254 554646c0aec37c3354f286b725d6ccf8 ""
   "figures/intro/thesis_overview.pdf" 1764179229 232705 dc16071b8c015a92d0503c678756ba1e ""
   "figures/part1/filtering_horizontal.pdf" 1763734740 87528 87965cfc22b90708e0d428307116b698 ""
-  "figures/part1/filtering_true_outliers.png" 1764240318 755090 ec6956a4d956c777326a2635f26ccccb ""
   "figures/part1/ideal_SA_horizontal.pdf" 1763734741 127030 b9b33c42394560943d77d5fa3c46c714 ""
   "figures/part1/jazz_SA_graph.png" 1763734741 1353473 d059fe256c0d39189c84f5520f98b530 ""
   "figures/part1/jazz_graph.png" 1763906193 1304850 e64bea8c7a37b5f80f64e28053436c30 ""
@@ -334,7 +333,6 @@
   "figures/part1/sbm_outliers_current.png" 1764254554 184236 22ae82ab126c8de80c66a558c68a2de3 ""
   "figures/part1/sbm_outliers_ideal.png" 1764254521 182096 82449d69a865edd83d87ac702ffad037 ""
   "figures/part1/sbm_outliers_init.png" 1764254435 181425 e49e81ea4e72ba7d5b9500357ffa74fd ""
-  "figures/part1/simulated_annealing_true_outliers.png" 1764240201 755232 b3e4586eaac54e83a9d730a9b2cf495c ""
   "figures/part2/aircanada.png" 1763903346 352770 f73389f385ab9d18fe3b87e7b7462225 ""
   "figures/part2/alignment_diagram.pdf" 1764502251 52688 53b3822b1c0e02c0e8ab88a2df466965 ""
   "figures/part2/autorater_prompt.PNG" 1764333400 113740 91d778f1d2c94467256f1f939b505a66 ""
@@ -345,16 +343,16 @@
   "figures/part2/npov_perl_struct_reward.png" 1763473785 190118 b420d1d3757335ec85069b81fc9da02a ""
   "figures/part2/npov_rm_organic.png" 1763484136 93817 b1f52a0046d1912f42cc78df6a349369 ""
   "figures/part2/npov_rm_struct.png" 1763473482 200571 078ff2f44b4cb753de2d24ce50872753 ""
-  "main.aux" 1764782750 16799 820e07f5e46baf2ba1d7c72d5ba34ea8 "pdflatex"
-  "main.bbl" 1764693103 4912 53dbdad1d07c37bf3ae2445351892963 "bibtex main"
-  "main.nav" 1764782750 8415 2263f09e76406fdc5fba59beec4a7c03 "pdflatex"
-  "main.out" 1764782750 1648 f886fb0aec91879b5c9020c5c53125cc "pdflatex"
+  "main.aux" 1764831048 15349 1f5d531b37b1883706d1220b9aa4e2fc "pdflatex"
+  "main.bbl" 1764830974 4912 53dbdad1d07c37bf3ae2445351892963 "bibtex main"
+  "main.nav" 1764831048 8415 2263f09e76406fdc5fba59beec4a7c03 "pdflatex"
+  "main.out" 1764831048 1648 f886fb0aec91879b5c9020c5c53125cc "pdflatex"
   "main.tex" 1764683408 3509 208201b862dd3d541b5aa41884a79d97 ""
-  "main.toc" 1764782750 428 a7bfd34045d48cdb1cf45e351064ff62 "pdflatex"
+  "main.toc" 1764831048 428 a7bfd34045d48cdb1cf45e351064ff62 "pdflatex"
   "preamble.tex" 1764680900 5117 3a2bba144c4463b506c6356b688dd58c ""
   "sections/appendix.tex" 1764693702 4793 36656933729dc577f230ebebd48d13c3 ""
   "sections/intro.tex" 1764242573 1157 90d1bbee29e4d6b050dc7bdc8d8ffd8a ""
-  "sections/part1.tex" 1764782673 18297 7ec50ac7c4866bc7ca278ac3f0698559 ""
+  "sections/part1.tex" 1764831036 18329 20e9461185ae2d9c83c19a06b79d694d ""
   "sections/part2.tex" 1764782738 34991 6bc332d5eea45616a0863ab2ba947302 ""
   (generated)
   "main.aux"

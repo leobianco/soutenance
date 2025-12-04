@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.20)  3 DEC 2025 18:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.20)  4 DEC 2025 07:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1529,40 +1529,22 @@ File: figures/part1/ideal_SA_horizontal.pdf Graphic file (type pdf)
 <use figures/part1/ideal_SA_horizontal.pdf>
 Package pdftex.def Info: figures/part1/ideal_SA_horizontal.pdf  used on input line 392.
 (pdftex.def)             Requested size: 303.94298pt x 101.3179pt.
-<figures/part1/simulated_annealing_true_outliers.png, id=441, 686.565pt x 459.3963pt>
-File: figures/part1/simulated_annealing_true_outliers.png Graphic file (type png)
-<use figures/part1/simulated_annealing_true_outliers.png>
-Package pdftex.def Info: figures/part1/simulated_annealing_true_outliers.png  used on input line 392.
-(pdftex.def)             Requested size: 170.34178pt x 113.9836pt.
-
-Overfull \vbox (19.31828pt too high) detected at line 392
- []
-
 
 
 [25
 
- <./figures/part1/ideal_SA_horizontal.pdf> <./figures/part1/simulated_annealing_true_outliers.png>]
-<figures/part1/filtering_horizontal.pdf, id=464, 1056.94875pt x 352.31625pt>
+ <./figures/part1/ideal_SA_horizontal.pdf>]
+<figures/part1/filtering_horizontal.pdf, id=459, 1056.94875pt x 352.31625pt>
 File: figures/part1/filtering_horizontal.pdf Graphic file (type pdf)
 <use figures/part1/filtering_horizontal.pdf>
 Package pdftex.def Info: figures/part1/filtering_horizontal.pdf  used on input line 408.
 (pdftex.def)             Requested size: 303.94298pt x 101.3179pt.
-<figures/part1/filtering_true_outliers.png, id=465, 686.565pt x 459.3963pt>
-File: figures/part1/filtering_true_outliers.png Graphic file (type png)
-<use figures/part1/filtering_true_outliers.png>
-Package pdftex.def Info: figures/part1/filtering_true_outliers.png  used on input line 408.
-(pdftex.def)             Requested size: 170.34178pt x 113.9836pt.
-
-Overfull \vbox (18.22322pt too high) detected at line 408
- []
-
 
 
 [26
 
- <./figures/part1/filtering_horizontal.pdf> <./figures/part1/filtering_true_outliers.png>]
-<figures/part1/multirun_gamma.pdf, id=488, 722.7pt x 433.62pt>
+ <./figures/part1/filtering_horizontal.pdf>]
+<figures/part1/multirun_gamma.pdf, id=477, 722.7pt x 433.62pt>
 File: figures/part1/multirun_gamma.pdf Graphic file (type pdf)
 <use figures/part1/multirun_gamma.pdf>
 Package pdftex.def Info: figures/part1/multirun_gamma.pdf  used on input line 417.
@@ -1580,7 +1562,7 @@ Package pdftex.def Info: figures/part1/multirun_gamma.pdf  used on input line 41
 [29
 
 ]
-<figures/part2/aircanada.png, id=683, 803.0pt x 688.5725pt>
+<figures/part2/aircanada.png, id=673, 803.0pt x 688.5725pt>
 File: figures/part2/aircanada.png Graphic file (type png)
 <use figures/part2/aircanada.png>
 Package pdftex.def Info: figures/part2/aircanada.png  used on input line 35.
@@ -1600,7 +1582,7 @@ Package pdftex.def Info: figures/part2/aircanada.png  used on input line 35.
 ]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
 (Font)              scaled to size 6.1pt on input line 306.
-<figures/part2/alignment_diagram.pdf, id=703, page=1, 518.93875pt x 269.005pt>
+<figures/part2/alignment_diagram.pdf, id=693, page=1, 518.93875pt x 269.005pt>
 File: figures/part2/alignment_diagram.pdf Graphic file (type pdf)
 <use figures/part2/alignment_diagram.pdf, page 1>
 Package pdftex.def Info: figures/part2/alignment_diagram.pdf , page1 used on input line 306.
@@ -1614,7 +1596,7 @@ Overfull \vbox (14.53215pt too high) detected at line 306
 [33
 
  <./figures/part2/alignment_diagram.pdf>]
-<figures/part2/alignment_diagram.pdf, id=711, page=2, 518.93875pt x 269.005pt>
+<figures/part2/alignment_diagram.pdf, id=701, page=2, 518.93875pt x 269.005pt>
 File: figures/part2/alignment_diagram.pdf Graphic file (type pdf)
 <use figures/part2/alignment_diagram.pdf, page 2>
 Package pdftex.def Info: figures/part2/alignment_diagram.pdf , page2 used on input line 326.
@@ -1628,7 +1610,7 @@ Overfull \vbox (14.53215pt too high) detected at line 326
 [34
 
  <./figures/part2/alignment_diagram.pdf>]
-<figures/part2/npov_diagram.pdf, id=719, 312.20638pt x 402.54388pt>
+<figures/part2/npov_diagram.pdf, id=709, 312.20638pt x 402.54388pt>
 File: figures/part2/npov_diagram.pdf Graphic file (type pdf)
 <use figures/part2/npov_diagram.pdf>
 Package pdftex.def Info: figures/part2/npov_diagram.pdf  used on input line 346.
@@ -1656,7 +1638,7 @@ Package pdftex.def Info: figures/part2/npov_diagram.pdf  used on input line 346.
 [37
 
 ]
-<figures/part2/alignment_diagram.pdf, id=785, page=3, 518.93875pt x 269.005pt>
+<figures/part2/alignment_diagram.pdf, id=775, page=3, 518.93875pt x 269.005pt>
 File: figures/part2/alignment_diagram.pdf Graphic file (type pdf)
 <use figures/part2/alignment_diagram.pdf, page 3>
 Package pdftex.def Info: figures/part2/alignment_diagram.pdf , page3 used on input line 363.
@@ -1670,7 +1652,7 @@ Overfull \vbox (3.65115pt too high) detected at line 363
 [38
 
  <./figures/part2/alignment_diagram.pdf>]
-<figures/part2/alignment_diagram.pdf, id=795, page=4, 518.93875pt x 269.005pt>
+<figures/part2/alignment_diagram.pdf, id=785, page=4, 518.93875pt x 269.005pt>
 File: figures/part2/alignment_diagram.pdf Graphic file (type pdf)
 <use figures/part2/alignment_diagram.pdf, page 4>
 Package pdftex.def Info: figures/part2/alignment_diagram.pdf , page4 used on input line 389.
@@ -1684,7 +1666,7 @@ Overfull \vbox (3.65115pt too high) detected at line 389
 [39
 
  <./figures/part2/alignment_diagram.pdf>]
-<figures/part2/alignment_diagram.pdf, id=804, page=5, 518.93875pt x 269.005pt>
+<figures/part2/alignment_diagram.pdf, id=794, page=5, 518.93875pt x 269.005pt>
 File: figures/part2/alignment_diagram.pdf Graphic file (type pdf)
 <use figures/part2/alignment_diagram.pdf, page 5>
 Package pdftex.def Info: figures/part2/alignment_diagram.pdf , page5 used on input line 406.
@@ -1702,12 +1684,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 423--423
 
  []
 
-<figures/part2/autorater_prompt.PNG, id=814, 617.30624pt x 193.72375pt>
+<figures/part2/autorater_prompt.PNG, id=804, 617.30624pt x 193.72375pt>
 File: figures/part2/autorater_prompt.PNG Graphic file (type png)
 <use figures/part2/autorater_prompt.PNG>
 Package pdftex.def Info: figures/part2/autorater_prompt.PNG  used on input line 423.
 (pdftex.def)             Requested size: 245.83282pt x 77.14818pt.
-<figures/part2/alignment_diagram.pdf, id=815, page=6, 518.93875pt x 269.005pt>
+<figures/part2/alignment_diagram.pdf, id=805, page=6, 518.93875pt x 269.005pt>
 File: figures/part2/alignment_diagram.pdf Graphic file (type pdf)
 <use figures/part2/alignment_diagram.pdf, page 6>
 Package pdftex.def Info: figures/part2/alignment_diagram.pdf , page6 used on input line 423.
@@ -1749,22 +1731,22 @@ Overfull \vbox (12.00272pt too high) detected at line 443
 LaTeX Font Info:    Font shape `T1/zpltlf/m/it' will be
 (Font)              scaled to size 9.0pt on input line 562.
 \imgw=\skip97
-<figures/part2/npov_rm_organic.png, id=846, 1499.6025pt x 1499.6025pt>
+<figures/part2/npov_rm_organic.png, id=836, 1499.6025pt x 1499.6025pt>
 File: figures/part2/npov_rm_organic.png Graphic file (type png)
 <use figures/part2/npov_rm_organic.png>
 Package pdftex.def Info: figures/part2/npov_rm_organic.png  used on input line 562.
 (pdftex.def)             Requested size: 86.04079pt x 86.03654pt.
-<figures/part2/npov_rm_struct.png, id=847, 1999.47pt x 1999.47pt>
+<figures/part2/npov_rm_struct.png, id=837, 1999.47pt x 1999.47pt>
 File: figures/part2/npov_rm_struct.png Graphic file (type png)
 <use figures/part2/npov_rm_struct.png>
 Package pdftex.def Info: figures/part2/npov_rm_struct.png  used on input line 562.
 (pdftex.def)             Requested size: 86.04079pt x 86.03654pt.
-<figures/part2/npov_perl_organic_reward.png, id=848, 1999.47pt x 1999.47pt>
+<figures/part2/npov_perl_organic_reward.png, id=838, 1999.47pt x 1999.47pt>
 File: figures/part2/npov_perl_organic_reward.png Graphic file (type png)
 <use figures/part2/npov_perl_organic_reward.png>
 Package pdftex.def Info: figures/part2/npov_perl_organic_reward.png  used on input line 562.
 (pdftex.def)             Requested size: 86.04079pt x 86.03654pt.
-<figures/part2/npov_perl_struct_reward.png, id=849, 1999.47pt x 1999.47pt>
+<figures/part2/npov_perl_struct_reward.png, id=839, 1999.47pt x 1999.47pt>
 File: figures/part2/npov_perl_struct_reward.png Graphic file (type png)
 <use figures/part2/npov_perl_struct_reward.png>
 Package pdftex.def Info: figures/part2/npov_perl_struct_reward.png  used on input line 562.
@@ -1830,7 +1812,7 @@ LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
 [54
 
 ]
-<figures/part2/dera-hallucination-single-col.pdf, id=900, 298.75616pt x 412.0504pt>
+<figures/part2/dera-hallucination-single-col.pdf, id=890, 298.75616pt x 412.0504pt>
 File: figures/part2/dera-hallucination-single-col.pdf Graphic file (type pdf)
 <use figures/part2/dera-hallucination-single-col.pdf>
 Package pdftex.def Info: figures/part2/dera-hallucination-single-col.pdf  used on input line 768.
@@ -1870,7 +1852,7 @@ Overfull \vbox (14.03195pt too high) detected at line 768
 [57
 
 ]
-<figures/part2/length_reward_result_no_sax.pdf, id=1044, 597.50829pt x 196.68883pt>
+<figures/part2/length_reward_result_no_sax.pdf, id=1034, 597.50829pt x 196.68883pt>
 File: figures/part2/length_reward_result_no_sax.pdf Graphic file (type pdf)
 <use figures/part2/length_reward_result_no_sax.pdf>
 Package pdftex.def Info: figures/part2/length_reward_result_no_sax.pdf  used on input line 775.
@@ -1930,7 +1912,7 @@ LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
 [64
 
 ]
-<figures/appendix/acharya_bound.png, id=1146, 611.28375pt x 169.13188pt>
+<figures/appendix/acharya_bound.png, id=1136, 611.28375pt x 169.13188pt>
 File: figures/appendix/acharya_bound.png Graphic file (type png)
 <use figures/appendix/acharya_bound.png>
 Package pdftex.def Info: figures/appendix/acharya_bound.png  used on input line 15.
@@ -1940,7 +1922,7 @@ Package pdftex.def Info: figures/appendix/acharya_bound.png  used on input line 
 [65
 
  <./figures/appendix/acharya_bound.png>]
-<figures/appendix/acharya_algo.png, id=1153, 599.74063pt x 238.39063pt>
+<figures/appendix/acharya_algo.png, id=1143, 599.74063pt x 238.39063pt>
 File: figures/appendix/acharya_algo.png Graphic file (type png)
 <use figures/appendix/acharya_algo.png>
 Package pdftex.def Info: figures/appendix/acharya_algo.png  used on input line 22.
@@ -1950,7 +1932,7 @@ Package pdftex.def Info: figures/appendix/acharya_algo.png  used on input line 2
 [66
 
  <./figures/appendix/acharya_algo.png>]
-<figures/appendix/proof_theorem.png, id=1160, 627.84563pt x 799.48688pt>
+<figures/appendix/proof_theorem.png, id=1150, 627.84563pt x 799.48688pt>
 File: figures/appendix/proof_theorem.png Graphic file (type png)
 <use figures/appendix/proof_theorem.png>
 Package pdftex.def Info: figures/appendix/proof_theorem.png  used on input line 29.
@@ -1964,7 +1946,7 @@ Overfull \vbox (38.70218pt too high) detected at line 29
 [67
 
  <./figures/appendix/proof_theorem.png>]
-<figures/appendix/kl_term.png, id=1168, 628.3475pt x 332.24126pt>
+<figures/appendix/kl_term.png, id=1158, 628.3475pt x 332.24126pt>
 File: figures/appendix/kl_term.png Graphic file (type png)
 <use figures/appendix/kl_term.png>
 Package pdftex.def Info: figures/appendix/kl_term.png  used on input line 36.
@@ -1974,7 +1956,7 @@ Package pdftex.def Info: figures/appendix/kl_term.png  used on input line 36.
 [68
 
  <./figures/appendix/kl_term.png>]
-<figures/appendix/delucion_dataset.png, id=1175, 373.89688pt x 107.40125pt>
+<figures/appendix/delucion_dataset.png, id=1165, 373.89688pt x 107.40125pt>
 File: figures/appendix/delucion_dataset.png Graphic file (type png)
 <use figures/appendix/delucion_dataset.png>
 Package pdftex.def Info: figures/appendix/delucion_dataset.png  used on input line 43.
@@ -1984,7 +1966,7 @@ Package pdftex.def Info: figures/appendix/delucion_dataset.png  used on input li
 [69
 
  <./figures/appendix/delucion_dataset.png>]
-<figures/appendix/delucion_results.png, id=1182, 452.18938pt x 62.2325pt>
+<figures/appendix/delucion_results.png, id=1172, 452.18938pt x 62.2325pt>
 File: figures/appendix/delucion_results.png Graphic file (type png)
 <use figures/appendix/delucion_results.png>
 Package pdftex.def Info: figures/appendix/delucion_results.png  used on input line 50.
@@ -1994,7 +1976,7 @@ Package pdftex.def Info: figures/appendix/delucion_results.png  used on input li
 [70
 
  <./figures/appendix/delucion_results.png>]
-<figures/appendix/delucion_graph_rm.png, id=1189, 622.325pt x 260.975pt>
+<figures/appendix/delucion_graph_rm.png, id=1179, 622.325pt x 260.975pt>
 File: figures/appendix/delucion_graph_rm.png Graphic file (type png)
 <use figures/appendix/delucion_graph_rm.png>
 Package pdftex.def Info: figures/appendix/delucion_graph_rm.png  used on input line 57.
@@ -2004,7 +1986,7 @@ Package pdftex.def Info: figures/appendix/delucion_graph_rm.png  used on input l
 [71
 
  <./figures/appendix/delucion_graph_rm.png>]
-<figures/appendix/delucion_graph_synthetic.png, id=1196, 641.89813pt x 280.54813pt>
+<figures/appendix/delucion_graph_synthetic.png, id=1186, 641.89813pt x 280.54813pt>
 File: figures/appendix/delucion_graph_synthetic.png Graphic file (type png)
 <use figures/appendix/delucion_graph_synthetic.png>
 Package pdftex.def Info: figures/appendix/delucion_graph_synthetic.png  used on input line 64.
@@ -2044,18 +2026,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: F886FB0AEC91879B5C9020C5C53125CC;1648.
  ) 
 Here is how much of TeX's memory you used:
- 38265 strings out of 467885
- 746708 string characters out of 5438197
- 1063708 words of memory out of 5000000
- 65877 multiletter control sequences out of 15000+600000
+ 38234 strings out of 467885
+ 745473 string characters out of 5438197
+ 1063707 words of memory out of 5000000
+ 65852 multiletter control sequences out of 15000+600000
  753512 words of font info for 210 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,20n,134p,843b,1088s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Brands-Regular.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newpx/pxsys.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/txexs.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/txsym.pfb><c:/texlive/2025/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newpx/zplb.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newpx/zplr.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on main.pdf (74 pages, 8673884 bytes).
+Output written on main.pdf (74 pages, 7392918 bytes).
 PDF statistics:
- 1317 PDF objects out of 1440 (max. 8388607)
- 904 compressed objects within 10 object streams
- 180 named destinations out of 1000 (max. 500000)
- 314 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1305 PDF objects out of 1440 (max. 8388607)
+ 897 compressed objects within 9 object streams
+ 174 named destinations out of 1000 (max. 500000)
+ 304 words of extra memory for PDF output out of 10000 (max. 10000000)
 
